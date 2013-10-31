@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2 class="page-header">Understanding the API</h2>
+<h4>The Poll</h4>
+<table class="table table-bordered">
+    <thead>
+        <th>Endpoint</th>
+        <th>Request Type</th>
+        <th>Description</th>
+        <th>Response Example</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/api/polls</td>
+            <td>GET</td>
+            <td>Returns a List of polls</td>
+            <td>[{"desc": "This is the content of my first poll", "title": "First Poll", "id": 5275456790069248}, {"desc": "This is the content of my first poll", "title": "First Poll", "id": 5838406743490560}]</td>
+        </tr>
+        <tr>
+            <td>/api/polls</td>
+            <td>POST</td>
+            <td>Creates a new Poll</td>
+            <td>{"desc": "This is the content of my first poll", "title": "First Poll", "id": 5275456790069248}</td>
+        </tr>
+        <tr>
+            <td>/api/polls/poll_id</td>
+            <td>GET</td>
+            <td>Shows Details of a Poll including the Contestants</td>
+            <td>{"desc": "This is the content of my first poll", "title": "First Poll", "contestants": [], "id": 5275456790069248}</td>
+        </tr>
+        <tr>
+            <td>/api/polls/poll_id/contestants</td>
+            <td>POST</td>
+            <td>Adds Contestant to Poll</td>
+            <td>This is a work in progress due to image handling</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock body %}
