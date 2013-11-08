@@ -1,18 +1,21 @@
 import logging
 __author__ = 'Tomiwa Ijaware'
+
+__modified_by__ = 'Adekola Adebayo'
 from models.poll import Poll, Vote, Contestant
 from google.appengine.ext import ndb
 
-def makePoll(user, title, desc):
+def makePoll(user, title, desc, contestants=None):
     nPoll = Poll(title=title, desc=desc, author=user)
     key = nPoll.put()
     id = str(key.id())
-    result = {
-       "id": id,
-       "title": nPoll.title,
-       "desc": nPoll.desc,
-       "user": nPoll.author 
-    }
+    contestants_results = []
+    if contestants is not None:
+        for c in contestants:
+           contestant_result = addContestant(c['name'], id, c['img'])
+           contestants_results.append(contestant_result)
+
+    result = {"id": id, "title": title, "desc": desc, "user": user, "contestants": contestants_results }
     return result
 
 def addContestant(name, poll, img):

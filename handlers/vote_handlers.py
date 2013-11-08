@@ -16,6 +16,6 @@ class VoteHandler(ApiHandler):
         self.render_object(result)
 
     def get(self):
-        result = {"warning": "getting individual contestans is not allowed"}
+        result = {"warning": "getting individual contestants is not allowed"}
             
         self.render_object(result)

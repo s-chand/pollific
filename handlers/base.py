@@ -20,18 +20,6 @@ def jinja2_factory(app):
     return j
 
 
-class ApiHandler(webapp2.RequestHandler):
-    """
-        This class defines a base handler for all the api request handlers
-        and eases the creation of json responses
-    """
-    
-    def render_object(self, result):
-        self.response.headers['Access-Control-Allow-Origin'] = '*'
-        self.response.headers.add_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.response.headers['Content-Type'] = 'application/json'
-        self.response.write(json.dumps(result))
-
 
 
 class BaseHandler(webapp2.RequestHandler):

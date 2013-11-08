@@ -1,26 +1,33 @@
 import json
 
 from modules.polls import crud
-from handlers.base import ApiHandler
+from handlers.index import ApiHandler
+
 
 class PollsHandler(ApiHandler):
     def get(self):
         result = crud.getPolls()
         
         self.render_object(result)
-        
-        
+
     def post(self):
         request = self.request.body
         #extract the post body then return
-        data = json.loads(request)
+        data = dict(json.loads(request))
         user = data['user']
         title = data['title']
         desc = data['desc']
-        result = crud.makePoll(user, title, desc)
-        
-        self.render_object(result)
+        if data.keys().__contains__('contestants'):
+            contestants = list(data['contestants'])
+            if len(contestants) > 0:
+                result = crud.makePoll(user, title, desc, contestants)
+        else:
+            result = crud.makePoll(user, title, desc)
 
+
+
+
+        self.render_object(result)
 
 
 class PollHandler(ApiHandler):
@@ -40,7 +47,7 @@ class ContestantsHandler(ApiHandler):
         name = data['name']
         poll = data['poll']
         img = data['img']
-#         img = data['img']
+#       img = data['img']
         result = crud.addContestant(name, poll, img)
         
         self.render_object(result)
