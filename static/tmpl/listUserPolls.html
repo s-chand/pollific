@@ -17,11 +17,11 @@
 	<tr ng-repeat='poll in polls'>
 		
 		<td >
-			<h3>{{poll.title}} <small>{{poll.voteCount}} votes</small></h3> 
+			<h3>{{poll.title}}</h3> 
 			<p>{{poll.description}}</p>
 			<br/>
 			<p>
-				<a class="btn btn-warning" ng-href="#/poll/{{poll.id}}">Stats</a> <a class="btn btn-success" ng-href=" #/view/{{poll.id}}">Details</a>
+				<a class="btn btn-warning" ng-href="#/poll/{{poll.poll_id}}">Stats</a> <a class="btn btn-success" ng-href=" #/view/{{poll.poll_id}}">Details</a>
 			</p>
 		</td>
 	</tr>

@@ -3,7 +3,7 @@
  */
 
 var pollplusModule = angular.module("PollPlus", []);
-var baseURL = "http://localhost:16000/api";
+var baseURL = "/api";
 var contestants = [];
 var polls = [{
 	"id" : 1,
@@ -50,6 +50,8 @@ var polls = [{
 	}]
 }];
 
+var pollData=[];
+//var deferred=$q.defer();
 var pTypes = ['private', 'public'];
 pollplusModule.config(function($httpProvider) {
 	$httpProvider.defaults.useXDomain = true;
@@ -100,29 +102,27 @@ pollplusModule.factory('pollService', function($http) {
 	//access the pollservice and fetch data
 	return {
 		getPolls : function() {//mock poll objects
-			return polls;
-			/* var url = baseURL + "/polls/";
-			 $http.get(url).success(function (data) {
-			 //.log(data);
-			 return data;
-			 }).error(function (data) {
-			 console.log("Error");
-			 //console.log(data);
-			 });*/
+			//return polls;
+			var url = baseURL + "/polls/";
+			 return $http.get(url);
+			 
 
+		},
+		getPollById: function(id)
+		{
+			var url=baseURL+"/polls/"+id;
+			return $http.get(url);
 		},
 		//send the json object from the poll
 		postPoll : function(data) {
-			/*var url = baseURL + "/polls/";
-			 $http.post(url, data).success(function (result) {
+			var url = baseURL + "/polls/";
+			/* $http.post(url, data).success(function (result) {
 			 console.log("Got this data for the poll ID: " + result);
 			 return result;
 			 }).error(function (result) {
 			 console.log("Error: "+result);
 			 });*/
-			polls.splice(1, 0, data);
-			console.log(polls);
-			return true;
+			return $http.post(url,data);
 
 		},
 		postContestants : function(pollid, data) {
@@ -157,7 +157,12 @@ pollplusModule.factory('pollService', function($http) {
 function PollListController($scope, pollService) {
 	//pass in the service to get the list of mock polls
 	//console.log(pollService.getUserId());
-	$scope.polls = pollService.getPolls();
+	var data=pollService.getPolls();
+	data.success(function(d){
+		$scope.polls=d;
+		console.log("smokes");
+	});
+	console.log(data);
 }
 
 function CreatePollController($scope, pollService) {
@@ -166,15 +171,14 @@ function CreatePollController($scope, pollService) {
 	//Call service to get Poll ID
 
 	//var userId = pollService.getUserId();
-	$scope.polls = pollService.getPolls();
+	//$scope.polls = pollService.getPolls();
 	$scope.contestants = contestants;
 	$scope.pollTypes = pTypes;
 	$scope.addContestant = function() {
 		$scope.contestants.splice(1, 0, {
 			name : $scope.fullname,
-			info : $scope.info,
-			image : "nothing for now",
-			id : ""
+			information : $scope.info,
+			photoURL : "/static/img/python.png",
 		});
 		$scope.fullname = "";
 		$scope.info = "";
@@ -196,11 +200,17 @@ function CreatePollController($scope, pollService) {
 		var pollInfo = $scope.pollInfo;
 		var poll = {};
 		poll.title = title;
-		poll.information = pollInfo;
+		poll.description = pollInfo;
+		poll.ownerID="samuelOkoroafor";
 		poll.contestants = conts;
 		//var result = pollService.postPoll(poll);
-		$scope.polls.splice(1, 0, poll);
-		console.log($scope.polls);
+		//$scope.polls.splice(1, 0, poll);
+		console.log(poll);
+		var result=pollService.postPoll(poll);
+		result.success(function(output){
+			console.log("output");
+			console.log(output);
+		});
 		$scope.result = "";
 		$scope.result = 'Poll created successfully';
 		//$scope.createResult.class="alert alert-success";
@@ -221,14 +231,14 @@ function CreatePollController($scope, pollService) {
 function PollDetailController($scope, $routeParams, pollService) {
 	//a model to control the display text on  the button
 	$scope.action="Vote";
-	var pollcount = pollService.getPolls();
-	var pollTemp = {};
-	for (var i = 0; i < pollcount.length; i++) {
-		if (pollcount[i].id == $routeParams.id) {
-			pollTemp = pollcount[i];
-		}
-		$scope.poll = pollTemp;
-	}
+	
+	var data=pollService.getPollById($routeParams.id);
+	
+	data.success(function(d){
+		$scope.poll=d;
+	});
+	
+	$scope.poll=data;
 	$scope.vote = function() {
 		var result = confirm("Are you sure?");
 		if (result == true) {
