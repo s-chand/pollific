@@ -22,20 +22,17 @@ class PollsHandler(ApiHandler):
         if data.keys().__contains__('contestants'):
             contestants = list(data['contestants'])
             if len(contestants) > 0:
-                result = crud.makePoll(user, title, desc, contestants)
+                result = crud.makePoll(user, title, desc, type, status,contestants)
         else:
-            result = crud.makePoll(user, title, desc)
+            result = crud.makePoll(user, title, desc, type, status,)
 
         self.render_object(result, 201)
 
-
 class PollHandler(ApiHandler):
-    def get(self, poll_id):
-        if id:
-            result = crud.getPollDetails(id)
-        else:
-            result = {"error": "no id specified"}
-            
+    def get(self):
+        poll_id = self.request.get('poll_id')
+        result = crud.getPollDetails(poll_id)
+
         self.render_object(result, 200)
 
     def post(self):
@@ -43,8 +40,11 @@ class PollHandler(ApiHandler):
 
 class ContestantsHandler(ApiHandler):
     def get(self, poll_id):
-        result = crud.getPollContestants(poll_id)
-        self.render_object(result, 200)
+        if poll_id:
+            result = crud.getPollContestants(poll_id)
+            self.render_object(result, 200)
+        else:
+            result = {"error": "no id specified"}
 
     def post(self):
         self.render_object({},405)

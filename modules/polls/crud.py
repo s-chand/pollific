@@ -49,8 +49,8 @@ def getPolls(user = None):
 
 #this retrieves full details of a poll whose id is supplied
 def getPollDetails(poll_id):
-    poll = Poll.get_by_id(int(poll_id))
-    if poll:
+    poll = Poll.get_by_id(poll_id)
+    if poll is not None:
         result = {
             "poll_id": id,
             "title": poll.title,
@@ -60,7 +60,7 @@ def getPollDetails(poll_id):
             "type": poll.type
         }
 
-    else: 
+    else:
         result = {"error": "No poll found with that Id"}
     
     return result
