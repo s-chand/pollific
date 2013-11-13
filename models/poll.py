@@ -1,12 +1,11 @@
 from google.appengine.ext import ndb
 
 class Poll(ndb.Model):
-    ownerId = ndb.StringProperty()
+    ownerID = ndb.StringProperty()
     title = ndb.StringProperty()
     description = ndb.TextProperty()
     type = ndb.StringProperty() # Private or public, rite?
     status = ndb.StringProperty()  #....Published or not
-
 
     def _to_dict(self, include=None, exclude=None):
         crap = self.to_dict()
