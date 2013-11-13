@@ -8,15 +8,17 @@ class PollsHandler(ApiHandler):
     def get(self):
         result = crud.getPolls()
         
-        self.render_object(result)
+        self.render_object(result, 200)
 
     def post(self):
         request = self.request.body
         #extract the post body then return
         data = dict(json.loads(request))
-        user = data['user']
+        user = data['ownerID']
         title = data['title']
-        desc = data['desc']
+        desc = data['description']
+        status = data['status']
+        type= data['type']
         if data.keys().__contains__('contestants'):
             contestants = list(data['contestants'])
             if len(contestants) > 0:
@@ -24,37 +26,33 @@ class PollsHandler(ApiHandler):
         else:
             result = crud.makePoll(user, title, desc)
 
-
-
-
-        self.render_object(result)
+        self.render_object(result, 201)
 
 
 class PollHandler(ApiHandler):
-    def get(self, id=None):
+    def get(self, poll_id):
         if id:
-            result = crud.getPoll(id)
+            result = crud.getPollDetails(id)
         else:
             result = {"error": "no id specified"}
             
-        self.render_object(result)
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({}, 405)
 
 class ContestantsHandler(ApiHandler):
-    def post(self):
-        request = self.request.body
-        #extract the post body then return
-        data = json.loads(request)
-        name = data['name']
-        poll = data['poll']
-        img = data['img']
-#       img = data['img']
-        result = crud.addContestant(name, poll, img)
-        
-        self.render_object(result)
-
-
     def get(self, poll_id):
-        result = {"warning": "we are working hard to get this working"}
-            
-        self.render_object(result)
-        
+        result = crud.getPollContestants(poll_id)
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({},405)
+
+class ContestantHandler(ApiHandler):
+    def get(self,contestant_id):
+        result = crud.getContestantDetails(contestant_id)
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({}, 405)

@@ -1,21 +1,27 @@
-from handlers.base import ApiHandler
+from handlers.index import ApiHandler
 import json
 from modules.polls import crud
 
 
 class VoteHandler(ApiHandler):
-    def post(self):
+    def post(self, poll_id):
         request = self.request.body
         #extract the post body then return
         data = json.loads(request)
-        poll = data['poll']
-        user = data['user']
+        user = data['voter']
         contestant = data['contestant']
-        result = crud.vote(user, contestant, poll)
-        
-        self.render_object(result)
+        value = data['value']
+        result = crud.vote(user, contestant, poll_id, value)
+        self.render_object(result, 201)
 
     def get(self):
-        result = {"warning": "getting individual contestants is not allowed"}
-            
-        self.render_object(result)
+        self.render_object({}, 405)
+
+
+class VotesHandler(ApiHandler):
+    def post(self):
+        self.render_object({},405)
+
+    def get(self, poll_id):
+        result = crud.getVotesInPoll(poll_id)
+        self.render_object(result, 200)

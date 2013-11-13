@@ -1,39 +1,87 @@
 {% extends 'base.html' %}
 {% block body %}
-<h2 class="page-header">Understanding the API</h2>
-<h4>The Poll</h4>
+<h2 class="page-header">Understanding the Poll+ API</h2>
 <table class="table table-bordered">
     <thead>
         <th>Endpoint</th>
         <th>Request Type</th>
         <th>Description</th>
+        <th>Request Params</th>
         <th>Response Example</th>
+        <th>Notes/ Examples URL calls</th>
     </thead>
     <tbody>
         <tr>
-            <td>/api/polls</td>
+            <td>/api/polls/</td>
             <td>GET</td>
             <td>Returns a List of polls</td>
-            <td>[{"desc": "This is the content of my first poll", "title": "First Poll", "id": 5275456790069248}, {"desc": "This is the content of my first poll", "title": "First Poll", "id": 5838406743490560}]</td>
+            <td>---</td>
+            <td>[{"title": "Some random title", "description": "A cute description to make things clear", "poll_id": "8468297770938989"},
+             {"title": "Another random title", "description": "Another cute description to make things clear", "poll_id": "8468297770938989" }]</td>
+            <td>http://poll-plus.appspot.com/api/polls/</td>
         </tr>
         <tr>
-            <td>/api/polls</td>
+            <td>/api/polls/</td>
             <td>POST</td>
             <td>Creates a new Poll</td>
-            <td>{"desc": "This is the content of my first poll", "title": "First Poll", "id": 5275456790069248}</td>
+            <td>{"title": title, "description": desc, "ownerID": ownerID, "contestants": [ {"name": "Contestant name",
+                "img" : "URl to image of contestant, "info" : "Contestants Info","code" : "Code for contestant if voting can be done via some other means"},
+                {"name": "Contestant name", "img" : "URl to image of contestant, "info" : "Contestants Info","code" : "Code for contestant if voting can be done via some other means"}]} </td>
+            <td>{"poll_id": "9737827287847879", "title": "A nice little title, aint it?",
+                "description": "Something to describe me",
+                "ownerID": ownerID, "contestants": [{"name": "Contestants name", "poll_id": "9737827287847879", "contestant_id": "48786726289787487", "photoURL": "http://flickr/poll-plus-pix/baba_himself.jpg", "information": "Whats your selling point?", "code": "62746"},
+                {"name": "Contestants name", "poll_id": "9737827287847879", "contestant_id": "48786726289787487", "photoURL": "http://flickr/poll-plus-pix/mama_himself.jpg", "information": "Whats your selling point?", "code": "62746"}] }</td>
+            <td>The contestants value can be omitted in the request if it does not apply to the typ of poll being created e.g  an opinion poll</td>
         </tr>
         <tr>
             <td>/api/polls/poll_id</td>
             <td>GET</td>
-            <td>Shows Details of a Poll including the Contestants</td>
-            <td>{"desc": "This is the content of my first poll", "title": "First Poll", "contestants": [], "id": 5275456790069248}</td>
+            <td>Returns the details of a particular poll...details such as ownerID, status, etc</td>
+            <td>The poll id </td>
+            <td>{ "poll_id": "47672676786368", "title": "Is Yvonne Nelson giving Iyanya her waist? ", "description": "All I want is your waist, your waist", "ownerID": "746667626868249",
+             "status": "Published or not", "type": "Private or Public"}</td>
+            <td>http://poll-plus.appspot.com/api/polls/247647936828457</td>
         </tr>
         <tr>
             <td>/api/polls/poll_id/contestants</td>
-            <td>POST</td>
-            <td>Adds Contestant to Poll</td>
-            <td>This is a work in progress due to image handling</td>
+            <td>GET</td>
+            <td>Gets a list of the Contestants in a Poll</td>
+            <td>The poll id for which contestants are to be fetched</td>
+            <td>{"poll_id": "876437687367646", "contestants": [{"name": "My name is Jona","contestant_id": "937487027787744"}
+                ,{"name": "8364766676273866","contestant_id": "87864767267657"}]}</td>
+            <td>http://poll-plus.appspot.com/api/polls/247647936828457/contestants</td>
         </tr>
+        <tr>
+            <td>/api/contestants/contestant_id</td>
+            <td>GET</td>
+            <td>Gets the details of a contestant whose id is supplied</td>
+            <td>The contestant id whose details should be fetched</td>
+            <td>{"name": "Oruko" "information": "What you know about me ke?",
+                "contestant_id": "8476726766", "photoURL": "http://flickr/poll-plus-pix/baba_himself.jpg" ,"code": "7846762"}</td>
+            <td>http://poll-plus.appspot.com/api/contestants/7476728936828457</td>
+        </tr>
+        <tr>
+            <td>/api/polls/poll_id/vote</td>
+            <td>POST</td>
+            <td>Creates a vote to a particular poll</td>
+            <td>The poll id for which the vote should be cast and the message body should contain something like this
+                - {"voter": "49787873793", "contestant": "975783676476863", "value": "Yes or No"}</td>
+            <td>{"vote_id": "7486836687", "poll_id": "9376468792849", "contestant_id": "8466772556654", "value": "True or False" }</td>
+            <td>http://poll-plus.appspot.com/api/polls/7476728947927857/vote</td>
+        </tr>
+        <tr>
+            <td>/api/polls/poll_id/votes</td>
+            <td>GET</td>
+            <td>GETs the votes for a particular poll</td>
+            <td>The poll id for which votes should be gotten</td>
+            <td>{"poll_id": poll_id,
+             "poll_votes": [{"contestant_voted": "75787378263767", "vote_value": "True or False},
+             {"contestant_voted": "7578736849683897", "vote_value": "True or False"},
+             {"contestant_voted": "75785687387878767", "vote_value": "True or False"}]}
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/votes</td>
+        </tr>
+
     </tbody>
 </table>
 

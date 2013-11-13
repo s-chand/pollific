@@ -1,10 +1,12 @@
 from google.appengine.ext import ndb
 
 class Poll(ndb.Model):
-    author = ndb.StringProperty()
+    ownerId = ndb.StringProperty()
     title = ndb.StringProperty()
-    desc = ndb.TextProperty()
-    expire_date = ndb.DateTimeProperty()
+    description = ndb.TextProperty()
+    type = ndb.StringProperty() # Private or public, rite?
+    status = ndb.StringProperty()  #....Published or not
+
 
     def _to_dict(self, include=None, exclude=None):
         crap = self.to_dict()
@@ -15,11 +17,13 @@ class Poll(ndb.Model):
 class Contestant(ndb.Model):
     poll = ndb.StringProperty()
     name = ndb.StringProperty()
-    img = ndb.StringProperty()
+    information = ndb.StringProperty()
+    photoURL = ndb.StringProperty()
+    code= ndb.StringProperty()
 
     
 class Vote(ndb.Model):
     poll= ndb.StringProperty()
     contestant = ndb.StringProperty()
-    user =ndb.StringProperty()
+    voter =ndb.StringProperty()
     value = ndb.BooleanProperty()
