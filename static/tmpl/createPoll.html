@@ -1,0 +1,64 @@
+<!-- The create Poll view mapped to the CreatePollController-->
+<form class="form-horizontal" ng-controller='CreatePollController' name="createForm">
+	<div>
+		{{result}}
+	</div>
+	<h1 class="accordion-heading">Create a Poll</h1>
+	<div class="row-fluid">
+		<div class="span7 pull-right">
+			<label for="pollInfo">Poll information</label>
+			<input type="text" class="input-xlarge" id="pollInfo" name="pollInfo" ng-model="pollInfo" required />
+			<br/>
+			<br/>
+
+		</div>
+		<label for="title">Poll Title</label>
+		<input type="text" class="inline" id="title" name="title" ng-model="title" required>
+
+		<label for="type">Access type</label>
+		<select ng-model="type">
+			<option ng-repeat="type in pollTypes">{{type}}</option>
+		</select>
+
+	</div>
+	<div class="row-fluid">
+		<div class="span4">
+			<h4>Contestants Information</h4>
+			<label for="fullname">Fullname</label>
+			<input type="text" id="fullname" name="fullname" ng-model="fullname" required>
+			<label for="info">Information</label>
+			<input type="text" id="info" name="info" ng-model="info" required>
+			<br/>
+			<br/>
+			<button id="add" name="add"class="btn" ng-disabled="!createForm.$valid" ng-click="addContestant();">
+				<i class="icon-plus-sign"></i> Add Contestant
+			</button>
+		</div>
+		<br/>
+		<div class="span7 pull-right">
+			<h5>Added Contestants</h5>
+			<table class="table">
+				<tr>
+					<td>No.</td><td>Contestant Name</td><td>Information</td><td>Actions</td>
+				<tr ng-repeat="contestant in contestants">
+					<td>{{$index+1}}</td><td>{{contestant.name}}</td><td>{{contestant.info}}</td><td>
+					<button class="btn btn-danger btn-mini" ng-click="remove($index)">
+						<i class="icon-remove"></i>
+					</button></td>
+				</tr>
+			</table>
+			<button class="btn btn-warning">
+				<i class="icon-save"></i> Save
+			</button>
+			<button class="btn btn-danger">
+				<i class="icon-remove"></i> Cancel
+			</button>
+			<button class="btn btn-success" ng-disabled="!createForm.$valid" ng-click="createPoll();">
+				<i class="icon-plus"></i> Publish
+			</button>
+			<br/>
+
+		</div>
+	</div>
+
+</form>

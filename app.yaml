@@ -22,10 +22,11 @@ handlers:
   
 - url: /static/tmpl
   static_dir: static/tmpl
-
+- url: /static/font
+  static_dir: static/font
 - url: .*
   script: main.app
-  
+
 - url: /_ah/spi/.*
   script: services.application
 

@@ -1,0 +1,29 @@
+<div ng-controller="PollListController">
+<!--ul class="media-list">
+    <li ng-repeat='poll in polls'>
+            <div class="row-fluid">
+            <h2 class="card-heading">{{poll.title}}</h2>
+            <p class="card-body">{{poll.description}}</p>
+            <p class="card-body">{{poll.type}}</p>
+                <p class="card-actions">
+                    <button class="btn btn-info">Stats</button> <button class="btn btn-warning">Share on G+</button> <a class="btn btn-success" ng-href=" #/view/{{poll.id}}">Details</a>
+                </p>
+            </div>
+            <hr/>
+    </li>
+    
+</ul-->
+<table class="table table-hover table-striped">
+	<tr ng-repeat='poll in polls'>
+		
+		<td >
+			<h3>{{poll.title}} <small>{{poll.voteCount}} votes</small></h3> 
+			<p>{{poll.description}}</p>
+			<br/>
+			<p>
+				<a class="btn btn-warning" ng-href="#/poll/{{poll.id}}">Stats</a> <a class="btn btn-success" ng-href=" #/view/{{poll.id}}">Details</a>
+			</p>
+		</td>
+	</tr>
+</table>
+</div>

@@ -1,0 +1,26 @@
+<div ng-controller="PollsVotedController">
+	<h3>Polls you voted</h3>
+	<table class="table table-striped table-bordered">
+		<tr>
+			<td>/</td>
+			<td>Poll Title</td>
+			<td>Poll Description</td>
+			<td>Number of votes</td>
+			<td>Contestants</td>
+		</tr>
+		<tr ng-repeat="poll in polls">
+			<td>{{poll.id}}</td>
+			<td>{{poll.title}}</td>
+			<td>{{poll.description}}</td>
+			<td>{{poll.voteCount}}</td>
+			<td>
+				<ul style="list-style-type:decimal">
+					<li ng-repeat="contestant in poll.contestants">{{contestant.name}}</li>
+				</ul>
+			</td>
+			
+		</tr>
+	</table>
+</div>
+<br/><div class="clearfix"></div>
+    <div><a href="/"><i class="icon-chevron-left"></i> Back to Time Line</a></div>
