@@ -13,21 +13,21 @@ def makePoll(ownerID, title, desc, type, status, contestants=None):
     contestants_results = []
     if contestants is not None:
         for c in contestants:
-           contestant_result = addContestant(c['name'], id, c['img'], c['info'], c['code'])
+           contestant_result = addContestant(c['name'], id, c['photoURL'], c['information'], c['code'])
            contestants_results.append(contestant_result)
 
     result = {"poll_id": id, "title": title, "description": desc, "ownerID": ownerID, "contestants": contestants_results }
     return result
 
 #this method is used by the makePoll method above to create contestants to a Poll on the fly
-def addContestant(name, poll, img, info, code=""):
-    c = Contestant(name=name, poll=poll, photoURL=img, information=info, code=code)
+def addContestant(name, poll, photoURL, info, code=""):
+    c = Contestant(name=name, poll=poll, photoURL=photoURL, information=info, code=code)
     c.put()
     result = {
         "name": name,
         "poll_id": poll,
         "contestant_id": str(c.key.id()),
-        "photoURL": img,
+        "photoURL": photoURL,
         "information": info,
         "code": code
     }
@@ -49,7 +49,7 @@ def getPolls(user = None):
 
 #this retrieves full details of a poll whose id is supplied
 def getPollDetails(poll_id):
-    poll = Poll.get_by_id(poll_id)
+    poll = Poll.get_by_id(poll_id,)
     if poll is not None:
         result = {
             "poll_id": id,
