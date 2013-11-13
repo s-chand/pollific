@@ -178,6 +178,7 @@ function CreatePollController($scope, pollService) {
 		$scope.contestants.splice(1, 0, {
 			name : $scope.fullname,
 			information : $scope.info,
+			code : $scope.code,
 			photoURL : "/static/img/python.png",
 		});
 		$scope.fullname = "";
@@ -203,6 +204,8 @@ function CreatePollController($scope, pollService) {
 		poll.description = pollInfo;
 		poll.ownerID="samuelOkoroafor";
 		poll.contestants = conts;
+		poll.type=$scope.type;
+		poll.status="published";
 		//var result = pollService.postPoll(poll);
 		//$scope.polls.splice(1, 0, poll);
 		console.log(poll);
