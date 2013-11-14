@@ -192,6 +192,12 @@ function CreatePollController($scope, pollService) {
 		 console.log("Final Post result: " + response);*/
 
 		var conts = $scope.contestants;
+		$scope.can_create = "";
+        $scope.watch("$scope.contestants", function(newValue, oldValue) {
+            if ($scope.contestants.length >= 2) {
+                $scope.can_create = "disabled";
+            };
+        }, true);
 		var title = $scope.title;
 		var pollInfo = $scope.pollInfo;
 		var poll = {};
