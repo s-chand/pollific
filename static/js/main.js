@@ -269,9 +269,16 @@ function PollStatsController($scope, $routeParams, pollService) {
 }
 
 function PollsVotedController($scope, pollService) {
-	$scope.polls = pollService.getPolls();
+	var data = pollService.getPolls();
+	data.success(function(d) {
+		$scope.polls = d;
+		
+	});
 }
 
 function CreatedPollsController($scope, pollService) {
-	$scope.polls = pollService.getPolls();
+	var data = pollService.getPolls();
+	data.success(function(d) {
+		$scope.polls = d;
+	});
 }
