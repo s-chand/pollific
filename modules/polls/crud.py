@@ -7,31 +7,38 @@ from google.appengine.ext import ndb
 
 
 def makePoll(ownerID, title, desc, type, status, contestants=None):
-    nPoll = Poll(title=title, description=desc, ownerID=ownerID,type=type, status=status)
-    key = nPoll.put()
-    id = str(key.id())
-    contestants_results = []
-    if contestants is not None:
-        for c in contestants:
-           contestant_result = addContestant(c['name'], id, c['photoURL'], c['information'], c['code'])
-           contestants_results.append(contestant_result)
+    try:
+        nPoll = Poll(title=title, description=desc, ownerID=ownerID,type=type, status=status)
+        key = nPoll.put()
+        id = str(key.id())
+        contestants_results = []
+        if contestants is not None:
+            for c in contestants:
+               contestant_result = addContestant(c['name'], id, c['photoURL'], c['information'], c['code'])
+               contestants_results.append(contestant_result)
 
-    result = {"poll_id": id, "title": title, "description": desc, "ownerID": ownerID, "contestants": contestants_results }
-    return result
+        result = {"poll_id": id, "title": title, "description": desc, "ownerID": ownerID, "contestants": contestants_results }
+        return result
+
+    except:
+        return {"error": "There has been an error" }
 
 #this method is used by the makePoll method above to create contestants to a Poll on the fly
 def addContestant(name, poll, photoURL, info, code=""):
-    c = Contestant(name=name, poll=poll, photoURL=photoURL, information=info, code=code)
-    c.put()
-    result = {
+    try:
+         c = Contestant(name=name, poll=poll, photoURL=photoURL, information=info, code=code)
+         c.put()
+         result = {
         "name": name,
         "poll_id": poll,
         "contestant_id": str(c.key.id()),
         "photoURL": photoURL,
         "information": info,
-        "code": code
-    }
-    return result
+        "code": code }
+
+         return result
+    except:
+        return {"error" : "There has been an error"}
 
 #this returns a list of polls with lil details - title, description and poll_id
 def getPolls(user = None):
@@ -49,30 +56,40 @@ def getPolls(user = None):
 
 #this retrieves full details of a poll whose id is supplied
 def getPollDetails(poll_id):
-    poll = Poll.get_by_id(poll_id,)
-    if poll is not None:
-        result = {
-            "poll_id": poll_id,
-            "title": poll.title,
-            "description": poll.description,
-            "ownerID": poll.ownerID,
-            "status":poll.status,
-            "type": poll.type
-        }
+    try:
+        poll = Poll.get_by_id(poll_id)
+        if poll is not None:
+            result = {
+                "poll_id": poll_id,
+                "title": poll.title,
+                "description": poll.description,
+                "ownerID": poll.ownerID,
+                "status":poll.status,
+                "type": poll.type
+            }
 
-    else:
-        result = {"error": "No poll found with that Id"}
-    
+        else:
+            result = {"error": "No poll found with that Id"}
+
+    except LookupError as e:
+        result = {"error": "There has been an error %s"%e }
+
     return result
 
 #this retrieves the list of contestants in a poll
 def getPollContestants(poll_id):
     contestants =list()
-    for contestant in Contestant.query(Contestant.poll==poll_id):
-        contestants.append({"name": contestant.name,"contestant_id": str(contestant.key.id())})
+    try:
+        for contestant in Contestant.query(Contestant.poll==poll_id):
+            contestants.append({"name": contestant.name,"contestant_id": str(contestant.key.id()),
+                                "information": contestant.information, "photoURL": contestant.photoURL,
+                                "code": contestant.code})
+        poll_contestants = {"poll_id": poll_id, "contestants": contestants}
+        return poll_contestants
 
-    poll_contestants = {"poll_id": poll_id, "contestants": contestants}
-    return poll_contestants
+    except LookupError as e:
+        result = {"result": "There has been an error: %s"%e }
+        return result
 
 #this votes for a contestant in poll
 def vote(voter, contestant, poll, value):
@@ -81,15 +98,19 @@ def vote(voter, contestant, poll, value):
     #check if the poll exists ooooo!!!!
     votes = Vote.query(Vote.poll==poll and Vote.voter==voter).fetch()
     if not votes: #i.e no votes already cast
-        vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
-        key = vote.put()
-        vote_id = str(key.id())
-        result= {
-        "vote_id": vote_id,
-        "poll_id": vote.poll,
-        "contestant_id": vote.contestant,
-        "value": vote.value
-    }
+        try:
+            vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
+            key = vote.put()
+            vote_id = str(key.id())
+            result= {
+            "vote_id": vote_id,
+            "poll_id": vote.poll,
+            "contestant_id": vote.contestant,
+            "value": vote.value }
+            return result
+
+        except ValueError as e:
+            result = {"error": "There has been an error %s "%e }
     else:
         result = {"error": "A vote has already been cast in this poll by the voter"}
 
@@ -98,33 +119,40 @@ def vote(voter, contestant, poll, value):
 
 #this gets the votes that have been made in a poll...the votes info excludes the id of the voter...since its mostly anonymous
 def getVotesInPoll(poll_id):
-    votes = Vote.query(Vote.poll == poll_id).fetch()
-    if votes: #i.e there have been votes cast in this poll
-        votes_list = list()
-        for vote in votes:
-            votes_list.append({"contestant_voted": vote.contestant, "vote_value": vote.value})
+    try:
+        votes = Vote.query(Vote.poll == poll_id).fetch()
+        if votes: #i.e there have been votes cast in this poll
+            votes_list = list()
+            for vote in votes:
+                votes_list.append({"contestant_voted": vote.contestant, "vote_value": vote.value})
 
-        poll_votes = {"poll_id": poll_id, "poll_votes": votes_list}
-        return poll_votes
+            poll_votes = {"poll_id": poll_id, "poll_votes": votes_list}
+            return poll_votes
 
-    else:
-        return {"error": "This poll has no votes yet"}
+        else:
+            return {"error": "This poll has no votes yet"}
+    except KeyError as e:
+        return {"error": "There has been an error: %s"%e }
 
 #this gets the details for a given contestant
 def getContestantDetails(contestant_id):
-    contestant = Contestant.get_by_id(contestant_id)
-    if contestant:
-        result = {
-            "name": contestant.name,
-            "information":contestant.information,
-            "contestant_id": str(contestant.key.id()),
-            "photoURL": contestant.photoURL,
-            "code":contestant.code
-        }
-        return result
+    try:
+        contestant = Contestant.get_by_id(contestant_id)
+        if contestant:
+            result = {
+                "name": contestant.name,
+                "information":contestant.information,
+                "contestant_id": str(contestant.key.id()),
+                "photoURL": contestant.photoURL,
+                "code":contestant.code
+            }
+            return result
 
-    else:
-        return {}
+        else:
+            return {"error": "No contestant found with that ID"}
+
+    except KeyError as e:
+        return {"error": "There has been an error: %s"%e }
 
 
 # we need to decide if and how unvoting will be done
