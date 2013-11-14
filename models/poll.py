@@ -6,13 +6,7 @@ class Poll(ndb.Model):
     description = ndb.TextProperty()
     type = ndb.StringProperty() # Private or public, rite?
     status = ndb.StringProperty()  #....Published or not
-    ID = ndb.ComputedProperty( lambda self: self.key.id() )
 
-    @classmethod
-    def id_to_key(cls, identifier, ancestor):
-        return cls.query(cls.ID == identifier,
-                         ancestor = ancestor.key ).get( keys_only = True)
-    
     def _to_dict(self, include=None, exclude=None):
         crap = self.to_dict()
         crap['id'] = self.key.id()
