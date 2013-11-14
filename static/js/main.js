@@ -4,7 +4,7 @@
 
 var pollplusModule = angular.module("PollPlus", []);
 var baseURL = "/api";
-var contestants = [];
+
 var polls = [{
 	"id" : 1,
 	"title" : "Cloud Hackathon",
@@ -167,7 +167,7 @@ function CreatePollController($scope, pollService) {
 
 	//var userId = pollService.getUserId();
 	//$scope.polls = pollService.getPolls();
-	$scope.contestants = contestants;
+	$scope.contestants = [];
 	$scope.pollTypes = pTypes;
 	$scope.addContestant = function() {
 		$scope.contestants.splice(1, 0, {
@@ -230,13 +230,11 @@ function PollDetailController($scope, $routeParams, pollService) {
 	//a model to control the display text on  the button
 	$scope.action = "Vote";
 
-	var data = pollService.getPollById($routeParams.id);
-	console.log(data);
-	data.success(function(d) {
+	var data = pollService.getPollById($routeParams.id); //get the details for the poll in question
+	data.success(function(d) { //if the operation was successful use it to create the poll object for the scope
 		$scope.poll = d;
-		var data2 = pollService.getContestants($scope.poll.poll_id);
-		console.log(data2);
-		data2.success(function(result) {
+		var data2 = pollService.getContestants($scope.poll.poll_id);// gets the list of contestants for this particular polls
+		data2.success(function(result) { //if the get request succeeds, add them to the list of contestants
 			$scope.poll.contestants = result.contestants;
 			
 		});
