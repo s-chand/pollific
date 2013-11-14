@@ -52,10 +52,10 @@ def getPollDetails(poll_id):
     poll = Poll.get_by_id(poll_id,)
     if poll is not None:
         result = {
-            "poll_id": id,
+            "poll_id": poll_id,
             "title": poll.title,
             "description": poll.description,
-            "ownerID": poll.ownerId,
+            "ownerID": poll.ownerID,
             "status":poll.status,
             "type": poll.type
         }
@@ -71,12 +71,14 @@ def getPollContestants(poll_id):
     for contestant in Contestant.query(Contestant.poll==poll_id):
         contestants.append({"name": contestant.name,"contestant_id": str(contestant.key.id())})
 
-    pool_contestants = {"poll_id": poll_id, "contestants": contestants}
+    poll_contestants = {"poll_id": poll_id, "contestants": contestants}
+    return poll_contestants
 
 #this votes for a contestant in poll
 def vote(voter, contestant, poll, value):
     # step 1. Get the Poll and the User's Entry
-    # step 2. 
+    # step 2.
+    #check if the poll exists ooooo!!!!
     votes = Vote.query(Vote.poll==poll and Vote.voter==voter).fetch()
     if not votes: #i.e no votes already cast
         vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
@@ -107,7 +109,6 @@ def getVotesInPoll(poll_id):
 
     else:
         return {"error": "This poll has no votes yet"}
-
 
 #this gets the details for a given contestant
 def getContestantDetails(contestant_id):
