@@ -36,7 +36,7 @@ var polls = [{
 	"type" : "public",
 	"status" : "published",
 	"ownerID" : "098876654453678",
-	"voteCount":86,
+	"voteCount" : 86,
 	"contestants" : [{
 		"name" : "Okoro Tugbaski",
 		"information" : "Sharp guy",
@@ -50,7 +50,7 @@ var polls = [{
 	}]
 }];
 
-var pollData=[];
+var pollData = [];
 //var deferred=$q.defer();
 var pTypes = ['private', 'public'];
 pollplusModule.config(function($httpProvider) {
@@ -75,14 +75,14 @@ function routeConfig($routeProvider) {
 		templateUrl : '/static/tmpl/pollStats.html'
 	}).
 	//this controls the polls a user voted in
-	when('/pollsVoted',{
-		controller: PollsVotedController,
-		templateUrl: '/static/tmpl/pollsVoted.html'
+	when('/pollsVoted', {
+		controller : PollsVotedController,
+		templateUrl : '/static/tmpl/pollsVoted.html'
 	}).
 	//Viewing the polls created by a user
-	when('/createdPolls',{
-		controller: CreatedPollsController,
-		templateUrl: '/static/tmpl/createdPolls.html'
+	when('/createdPolls', {
+		controller : CreatedPollsController,
+		templateUrl : '/static/tmpl/createdPolls.html'
 	}).
 	//this is for viewing a particular poll
 	when('/view/:id', {
@@ -104,13 +104,11 @@ pollplusModule.factory('pollService', function($http) {
 		getPolls : function() {//mock poll objects
 			//return polls;
 			var url = baseURL + "/polls/";
-			 return $http.get(url);
-			 
+			return $http.get(url);
 
 		},
-		getPollById: function(id)
-		{
-			var url=baseURL+"/polls/"+id;
+		getPollById : function(id) {
+			var url = baseURL + "/polls/" + id;
 			return $http.get(url);
 		},
 		//send the json object from the poll
@@ -122,20 +120,17 @@ pollplusModule.factory('pollService', function($http) {
 			 }).error(function (result) {
 			 console.log("Error: "+result);
 			 });*/
-			return $http.post(url,data);
+			return $http.post(url, data);
 
 		},
-		postContestants : function(pollid, data) {
-			/*var url = baseURL + "/polls/"+pollid+"/contestants/";
-			 $http.post(url, data).success(function (response) {
-			 console.log(response);
-			 alert("Poll Successfully created");
-			 //window.location="/home";
-			 })
-			 .error(function (response) {
-			 console.log(response);
-			 });*/
+		getContestants : function(pollid) {
+			var url = baseURL + '/polls/' + pollid + '/contestants';
+			return $http.get(url);
 
+		},
+		getContestant : function(contestant_id) {
+			var url = baseURL + '/contestants/' + contestant_id;
+			return $http.get(url);
 		},
 		vote : function() {
 			// body...
@@ -157,9 +152,9 @@ pollplusModule.factory('pollService', function($http) {
 function PollListController($scope, pollService) {
 	//pass in the service to get the list of mock polls
 	//console.log(pollService.getUserId());
-	var data=pollService.getPolls();
-	data.success(function(d){
-		$scope.polls=d;
+	var data = pollService.getPolls();
+	data.success(function(d) {
+		$scope.polls = d;
 		console.log("smokes");
 	});
 	console.log(data);
@@ -202,15 +197,15 @@ function CreatePollController($scope, pollService) {
 		var poll = {};
 		poll.title = title;
 		poll.description = pollInfo;
-		poll.ownerID="samuelOkoroafor";
+		poll.ownerID = "samuelOkoroafor";
 		poll.contestants = conts;
-		poll.type=$scope.type;
-		poll.status="published";
+		poll.type = $scope.type;
+		poll.status = "published";
 		//var result = pollService.postPoll(poll);
 		//$scope.polls.splice(1, 0, poll);
 		console.log(poll);
-		var result=pollService.postPoll(poll);
-		result.success(function(output){
+		var result = pollService.postPoll(poll);
+		result.success(function(output) {
 			console.log("output");
 			console.log(output);
 		});
@@ -233,15 +228,22 @@ function CreatePollController($scope, pollService) {
 
 function PollDetailController($scope, $routeParams, pollService) {
 	//a model to control the display text on  the button
-	$scope.action="Vote";
-	
-	var data=pollService.getPollById($routeParams.id);
+	$scope.action = "Vote";
+
+	var data = pollService.getPollById($routeParams.id);
 	console.log(data);
-	data.success(function(d){
-		$scope.poll=d;
+	data.success(function(d) {
+		$scope.poll = d;
+		var data2 = pollService.getContestants($scope.poll.poll_id);
+		console.log(data2);
+		data2.success(function(result) {
+			$scope.poll.contestants = result.contestants;
+			
+		});
 	});
-	
-	$scope.poll=data;
+
+	$scope.poll = data;
+
 	$scope.vote = function() {
 		var result = confirm("Are you sure?");
 		if (result == true) {
@@ -262,10 +264,10 @@ function PollStatsController($scope, $routeParams, pollService) {
 	}
 }
 
-function PollsVotedController($scope,pollService) {
-$scope.polls=pollService.getPolls();
+function PollsVotedController($scope, pollService) {
+	$scope.polls = pollService.getPolls();
 }
-function CreatedPollsController($scope,pollService)
-{
-	$scope.polls=pollService.getPolls();
+
+function CreatedPollsController($scope, pollService) {
+	$scope.polls = pollService.getPolls();
 }
