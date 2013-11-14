@@ -23,13 +23,13 @@ _routes = [
         #POSTs a new poll to the server by supplying details of the poll as well as the contestants if applicable
         RedirectRoute('/polls/', handler = 'handlers.poll_handlers.PollsHandler', name = 'polls_uri'),
         #GETs the full details of a particular poll...details such as ownerID, status, etc
-        RedirectRoute('/poll/', handler = 'handlers.poll_handlers.PollHandler', name = 'poll_uri'),
+        RedirectRoute('/polls/<poll_id:\d+>', handler = 'handlers.poll_handlers.PollHandler', name = 'poll_uri'),
         #GETs the contestants for a particular poll
         RedirectRoute('/polls/<poll_id:\d+>/contestants', handler = 'handlers.poll_handlers.ContestantsHandler', name = 'poll_contestants_uri'),
         #POSTs a vote to a particular poll
-        RedirectRoute('/polls/<poll_id:\d+>/vote', handler = 'handlers.poll_handlers.VoteHandler', name = 'vote_uri'),
+        RedirectRoute('/polls/<poll_id:\d+>/vote', handler = 'handlers.vote_handlers.VoteHandler', name = 'vote_uri'),
         #GETs the votes for a particular poll
-        RedirectRoute('/polls/<poll_id:\d+>/votes', handler = 'handlers.poll_handlers.VotesHandler', name = 'vote_uri'),
+        RedirectRoute('/polls/<poll_id:\d+>/votes', handler = 'handlers.vote_handlers.VotesHandler', name = 'vote_uri'),
         #GETs the details of a particular contestant
         RedirectRoute('/contestants/<contestant_id:\d+>', handler = 'handlers.poll_handlers.ContestantHandler', name = 'contestants_uri'),
 

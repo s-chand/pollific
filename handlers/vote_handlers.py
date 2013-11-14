@@ -10,7 +10,8 @@ class VoteHandler(ApiHandler):
         data = json.loads(request)
         user = data['voter']
         contestant = data['contestant']
-        value = data['value']
+        val= data['value']
+        value = val == True
         result = crud.vote(user, contestant, poll_id, value)
         self.render_object(result, 201)
 
