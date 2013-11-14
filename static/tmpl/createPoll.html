@@ -10,11 +10,13 @@
 		<select ng-model="type">
 			<option ng-repeat="type in pollTypes">{{type}}</option>
 		</select>
-
+		<br/>
+		<label for="image">Add Photo</label>
+		<input />
 		</div>
 		<label for="title">Poll Title</label>
 		<input type="text" class="inline" id="title" name="title" ng-model="title" required>
-
+		<br/>
 		<label for="pollInfo">Poll information</label>
 			<input type="text" class="input-xlarge" id="pollInfo" name="pollInfo" ng-model="pollInfo" required />
 
@@ -31,7 +33,7 @@
 			<input type="text" id="code" name="code" ng-model="code" />
 			<br/>
 			<br/>
-			<button id="add" name="add"class="btn" ng-click="addContestant();">
+			<button id="add" name="add"class="btn" ng-disabled="can_create" ng-click="addContestant();">
 				<i class="icon-plus-sign"></i> Add Contestant
 			</button>
 		</div>
