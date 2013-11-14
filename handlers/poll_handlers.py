@@ -29,9 +29,9 @@ class PollsHandler(ApiHandler):
         self.render_object(result, 201)
 
 class PollHandler(ApiHandler):
-    def get(self):
-        poll_id = self.request.get('poll_id')
-        result = crud.getPollDetails(poll_id)
+    def get(self, poll_id):
+        _id = int(poll_id)
+        result = crud.getPollDetails(_id)
 
         self.render_object(result, 200)
 
@@ -51,7 +51,7 @@ class ContestantsHandler(ApiHandler):
 
 class ContestantHandler(ApiHandler):
     def get(self,contestant_id):
-        result = crud.getContestantDetails(contestant_id)
+        result = crud.getContestantDetails(int(contestant_id))
         self.render_object(result, 200)
 
     def post(self):

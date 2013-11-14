@@ -2,28 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="172acebe-20d2-489e-85cb-bdbf1045d1c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/api.html" afterPath="$PROJECT_DIR$/templates/api.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/polls/crud.py" afterPath="$PROJECT_DIR$/modules/polls/crud.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/poll.py" afterPath="$PROJECT_DIR$/models/poll.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/poll_handlers.py" afterPath="$PROJECT_DIR$/handlers/poll_handlers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/vote_handlers.py" afterPath="$PROJECT_DIR$/handlers/vote_handlers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pollific.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384380433295" ignored="false" />
-    <file path="/vote_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384311637240" ignored="false" />
+    <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384387684544" ignored="false" />
+    <file path="/vote_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384389359410" ignored="false" />
     <file path="/base.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383578726390" ignored="false" />
     <file path="/index.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383978717329" ignored="false" />
     <file path="/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980696907" ignored="false" />
     <file path="/index.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384311666292" ignored="false" />
-    <file path="/poll_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384380206908" ignored="false" />
+    <file path="/poll_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384388784788" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/statics/js/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980697979" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/logic/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980857308" ignored="false" />
-    <file path="/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384380935100" ignored="false" />
+    <file path="/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384389021506" ignored="false" />
     <file path="/poll.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384357446639" ignored="false" />
-    <file path="$USER_HOME$/PycharmProjects/9lyrix/main.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384027814698" ignored="false" />
+    <file path="$USER_HOME$/PycharmProjects/9lyrix/main.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384387829358" ignored="false" />
     <file path="/main.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384027793807" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/app.yaml" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383813852018" ignored="false" />
     <file path="/app.yaml" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384243449326" ignored="false" />
@@ -33,7 +32,7 @@
     <file path="$USER_HOME$/PycharmProjects/9lyrix/templates/index.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383978728016" ignored="false" />
     <file path="/models.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383979050398" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/models/models.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980203339" ignored="false" />
-    <file path="/routes.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384311031335" ignored="false" />
+    <file path="/routes.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384389271141" ignored="false" />
     <file path="/api.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384353229449" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,10 +56,8 @@
       <file leaf-file-name="poll_handlers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="19" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1606#1633#0" expanded="false" />
-              </folding>
+            <state line="53" column="62" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,7 +74,7 @@
       <file leaf-file-name="routes.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.0">
+            <state line="29" column="84" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,33 +83,32 @@
       <file leaf-file-name="vote_handlers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/vote_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="38" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
+            <state line="14" column="24" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crud.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="crud.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="4" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.7380952">
+            <state line="83" column="17" selection-start="2794" selection-end="2794" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#240#752#0" expanded="false" />
                 <element signature="e#902#1196#0" expanded="false" />
                 <element signature="e#1309#1627#0" expanded="false" />
-                <element signature="e#2531#3108#0" expanded="false" />
-                <element signature="e#3269#3690#0" expanded="false" />
-                <element signature="e#3781#4153#0" expanded="false" />
-                <element signature="e#4250#4544#0" expanded="false" />
+                <element signature="e#3341#3761#0" expanded="false" />
+                <element signature="e#3852#4224#0" expanded="false" />
+                <element signature="e#4321#4615#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="poll.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="poll.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/poll.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
+            <state line="29" column="6" selection-start="886" selection-end="886" vertical-scroll-proportion="0.66547406">
               <folding />
             </state>
           </provider>
@@ -130,7 +126,7 @@
       <file leaf-file-name="api.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/api.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="22" selection-start="1533" selection-end="1533" vertical-scroll-proportion="-13.0">
+            <state line="29" column="22" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,14 +163,14 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/js/app.js" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/handlers/vote_handlers.py" />
         <option value="$PROJECT_DIR$/handlers/index.py" />
         <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/templates/api.html" />
         <option value="$PROJECT_DIR$/models/poll.py" />
-        <option value="$PROJECT_DIR$/routes.py" />
         <option value="$PROJECT_DIR$/handlers/poll_handlers.py" />
         <option value="$PROJECT_DIR$/modules/polls/crud.py" />
+        <option value="$PROJECT_DIR$/routes.py" />
+        <option value="$PROJECT_DIR$/handlers/vote_handlers.py" />
       </list>
     </option>
   </component>
@@ -327,22 +323,6 @@
     </key>
   </component>
   <component name="RunManager" selected="App Engine server.pollific">
-    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pollific" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="browserUrl" value="" />
-      <option name="additionalOptions" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -363,6 +343,22 @@
       <option name="USE_PATTERN" value="false" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pollific" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="browserUrl" value="" />
+      <option name="additionalOptions" value="" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -465,7 +461,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30454546" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3098485" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -578,13 +574,6 @@
         <state line="13" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="-0.65384614" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="35" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
@@ -601,53 +590,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/api.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="22" selection-start="1533" selection-end="1533" vertical-scroll-proportion="-13.0">
+        <state line="29" column="22" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/vote_handlers.py">
+    <entry file="file://$PROJECT_DIR$/handlers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="38" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.0">
+        <state line="20" column="0" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="19" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1606#1633#0" expanded="false" />
-          </folding>
+        <state line="53" column="62" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/poll.py">
+    <entry file="file://$PROJECT_DIR$/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
+        <state line="29" column="84" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/vote_handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="4" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.7380952">
+        <state line="83" column="17" selection-start="2794" selection-end="2794" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#240#752#0" expanded="false" />
             <element signature="e#902#1196#0" expanded="false" />
             <element signature="e#1309#1627#0" expanded="false" />
-            <element signature="e#2531#3108#0" expanded="false" />
-            <element signature="e#3269#3690#0" expanded="false" />
-            <element signature="e#3781#4153#0" expanded="false" />
-            <element signature="e#4250#4544#0" expanded="false" />
+            <element signature="e#3341#3761#0" expanded="false" />
+            <element signature="e#3852#4224#0" expanded="false" />
+            <element signature="e#4321#4615#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/poll.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="6" selection-start="886" selection-end="886" vertical-scroll-proportion="0.66547406">
+          <folding />
         </state>
       </provider>
     </entry>
