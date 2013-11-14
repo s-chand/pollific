@@ -236,7 +236,7 @@ function PollDetailController($scope, $routeParams, pollService) {
 	$scope.action="Vote";
 	
 	var data=pollService.getPollById($routeParams.id);
-	
+	console.log(data);
 	data.success(function(d){
 		$scope.poll=d;
 	});
