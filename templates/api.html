@@ -45,10 +45,26 @@
         <tr>
             <td>/api/polls/poll_id/contestants</td>
             <td>GET</td>
-            <td>Gets a list of the Contestants in a Poll</td>
+            <td>Gets details of all the Contestants in a Poll</td>
             <td>The poll id for which contestants are to be fetched</td>
-            <td>{"poll_id": "876437687367646", "contestants": [{"name": "My name is Jona","contestant_id": "937487027787744"}
-                ,{"name": "8364766676273866","contestant_id": "87864767267657"}]}</td>
+            <td>{"contestants": [
+        {
+            "contestant_id": "5066549580791808",
+            "information": "Contestants Info",
+            "code": "Code for contestant if voting can be done via some other means",
+            "name": "Contestant name",
+            "photoURL": "URl to image of contestant"
+        },
+        {
+            "contestant_id": "6192449487634432",
+            "information": "Contestants Info",
+            "code": "Code for contestant if voting can be done via some other means",
+            "name": "Contestant name",
+            "photoURL": "URl to image of contestant"
+        }
+    ],
+    "poll_id": "5629499534213120"
+}</td>
             <td>http://poll-plus.appspot.com/api/polls/247647936828457/contestants</td>
         </tr>
         <tr>

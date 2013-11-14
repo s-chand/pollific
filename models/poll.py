@@ -25,4 +25,4 @@ class Vote(ndb.Model):
     poll= ndb.StringProperty()
     contestant = ndb.StringProperty()
     voter =ndb.StringProperty()
-    value = ndb.BooleanProperty()
+    value = ndb.StringProperty()
