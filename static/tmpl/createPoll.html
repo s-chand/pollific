@@ -26,11 +26,11 @@
 		<div class="span4">
 			<h4>Contestants Information</h4>
 			<label for="fullname">Fullname</label>
-			<input type="text" id="fullname" name="fullname" ng-model="fullname">
+			<input type="text" id="fullname" name="fullname" ng-disabled="can_create" ng-model="fullname">
 			<label for="info">Information</label>
-			<input type="text" id="info" name="info" ng-model="info">
+			<input type="text" id="info" name="info" ng-disabled="can_create" ng-model="info">
 			<label for="code">Code</label>
-			<input type="text" id="code" name="code" ng-model="code" />
+			<input type="text" id="code" name="code" ng-disabled="can_create" ng-model="code" />
 			<br/>
 			<br/>
 			<button id="add" name="add"class="btn" ng-disabled="can_create" ng-click="addContestant();">

@@ -178,7 +178,12 @@ function CreatePollController($scope, pollService) {
 		});
 		$scope.fullname = "";
 		$scope.info = "";
+		console.log($scope.contestants);
+        if ($scope.contestants.length >= 2) {
+            $scope.can_create = "disabled";
+        };
 	};
+	$scope.can_create = "";
 	$scope.createPoll = function() {
 
 		/* var object = {user: userId, title: title, desc: pollInfo};
@@ -191,13 +196,7 @@ function CreatePollController($scope, pollService) {
 		 var response = pollService.postContestants(pollID,$scope.contestants);
 		 console.log("Final Post result: " + response);*/
 
-		var conts = $scope.contestants;
-		$scope.can_create = "";
-        $scope.watch("$scope.contestants", function(newValue, oldValue) {
-            if ($scope.contestants.length >= 2) {
-                $scope.can_create = "disabled";
-            };
-        }, true);
+		var conts = $scope.contestants;		
 		var title = $scope.title;
 		var pollInfo = $scope.pollInfo;
 		var poll = {};
@@ -219,6 +218,7 @@ function CreatePollController($scope, pollService) {
 		$scope.result = 'Poll created successfully';
 		//$scope.createResult.class="alert alert-success";
 		$scope.clear();
+		
 
 	};
 	$scope.remove = function(index) {
