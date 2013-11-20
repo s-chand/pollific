@@ -10,6 +10,7 @@
 function PollListController($scope, pollService) {
     //pass in the service to get the list of mock polls
     //console.log(pollService.getUserId());
+    $scope.username="Samuel Okoroafor";
     var data = pollService.getPolls();
     data.success(function(d) {
         $scope.polls = d;

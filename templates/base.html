@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/bootswatch.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/alertify.core.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/alertify.default.css" />
     <style type="text/css">
     	body{
     		margin-top:60px;
@@ -41,6 +43,10 @@
         	<li><a href="">Contact</a></li>
         </ul>
         
+       </div>
+       <div class="pull-right" ng-controller="NavCtrl">
+       	<!--Check that the user is logged in or not before rendering this -->
+       	<a class="btn btn-warning" href="">Login</a>
        </div>
      </div>
    </div>

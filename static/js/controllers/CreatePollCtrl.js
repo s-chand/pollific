@@ -48,11 +48,12 @@ function CreatePollController($scope, pollService) {
         console.log(poll);
         var result = pollService.postPoll(poll);
         result.success(function(output) {
-            console.log("output");
-            console.log(output);
-        });
-        $scope.result = "";
+            alertify.success("Poll Created Successfully!");
+            sclass="alert alert-block alert-success";
+            $scope.result = "";
         $scope.result = 'Poll created successfully';
+        });
+        
         //$scope.createResult.class="alert alert-success";
         $scope.clear();
         
@@ -65,6 +66,7 @@ function CreatePollController($scope, pollService) {
     $scope.clear = function() {
         $scope.title = "";
         $scope.pollInfo = "";
+        $scope.code="";
         $scope.contestants = [];
     }
 }
