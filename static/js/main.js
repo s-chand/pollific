@@ -88,8 +88,9 @@ function routeConfig($routeProvider) {
 	when('/view/:id', {
 		controller : PollDetailController,
 		templateUrl : '/static/tmpl/pollDetail.html'
-	}).otherwise({
-		redirectTo : '/'
+	})
+	.otherwise({
+		redirectTo : '/',
 	});
 
 }
@@ -131,13 +132,15 @@ pollplusModule.factory('pollService', function($http) {
 		getContestant : function(contestant_id) {
 			var url = baseURL + '/contestants/' + contestant_id;
 			return $http.get(url);
-		},
-		vote : function() {
+		},//cast a vote
+		vote : function(pollId,data) {
 			// body...
-
-		},
+			var url=baseURL+'/polls/'+pollId+'/vote';
+			return $http.post(url,data);
+		}, 
+		//User related service functions
 		getUserId : function() {
-			var url = '/gateway';
+			var url = '/';
 			$http.get(url).success(function(data) {
 				console.log("SUCCESS: " + data);
 				return data;
@@ -145,8 +148,23 @@ pollplusModule.factory('pollService', function($http) {
 			}).error(function(data) {
 				console.log("ERROR: " + data);
 			})
+		},
+		getLoggedInUser:function(){
+		    
+		},
+		isUserLoggedIn:function(){
+		    
+		},
+		getVotes:function(pollId)
+		{
+		    var url='/polls/'+pollId+'/votes';
+		    return $http.get(url);
 		}
 	}
 });
+function NavCtrl($scope)
+{
+    $scope.username="Samuel Okoroafor";
+}
 
 

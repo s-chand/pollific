@@ -29,6 +29,7 @@
  <hr/>
 </header>
 <div class="row">
+	<!--Render these only if the user is Logged in -->
 	<div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav affix-top">
           <li><a ng-href="/#createPoll"><i class="icon-check"></i> Create Poll <i class="icon-chevron-right"></i></a></li>
@@ -43,6 +44,7 @@
 
 {% block script %}
 <script src="/static/js/angular.min.js"></script>
+<script src="/static/js/alertify.js"></script>
 <script src="/static/js/main.js"></script>
 <script src="/static/js/controllers/CreatePollCtrl.js"></script>
 <script src="/static/js/controllers/PollDetailViewCtrl.js"></script>
@@ -50,6 +52,7 @@
 <script src="/static/js/controllers/PollStatisticCtrl.js"></script>
 <script src="/static/js/controllers/PollsVotedCtrl.js"></script>
 <script src="/static/js/controllers/UserCreatedPollsCtrl.js"></script>
+<script src="/static/js/controllers/NavCtrl.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
 {% endblock script %}
 

@@ -1,22 +1,24 @@
 <!-- The create Poll view mapped to the CreatePollController-->
 <form class="form-horizontal" ng-controller='CreatePollController' name="createForm">
-	<div>
+	<div ng-class="{{sclass}}">
 		{{result}}
 	</div>
 	<h1 class="accordion-heading">Create a Poll</h1>
+	<br/>
+	<div class="alert alert-block alert-info">Please note that you are currently allowed to add just 2 contestants/options</div>
 	<div class="row-fluid">
 		<div class="span7 pull-right">
 			<label for="type">Select an access type</label>
 		<select ng-model="type">
 			<option ng-repeat="type in pollTypes">{{type}}</option>
 		</select>
-		<br/>
-		<label for="image">Add Photo</label>
-		<input />
+		<br/><br/>
+		<!--label for="image">Add Photo</label>
+		<input type="file" /-->
 		</div>
-		<label for="title">Poll Title</label>
+		<label for="title">Poll Title*</label>
 		<input type="text" class="inline" id="title" name="title" ng-model="title" required>
-		<br/>
+		<br/><br/>
 		<label for="pollInfo">Poll information</label>
 			<input type="text" class="input-xlarge" id="pollInfo" name="pollInfo" ng-model="pollInfo" required />
 
@@ -25,12 +27,14 @@
 	<div class="row-fluid">
 		<div class="span4">
 			<h4>Contestants Information</h4>
-			<label for="fullname">Fullname</label>
-			<input type="text" id="fullname" name="fullname" ng-disabled="can_create" ng-model="fullname">
-			<label for="info">Information</label>
-			<input type="text" id="info" name="info" ng-disabled="can_create" ng-model="info">
+			<label for="fullname">Fullname*</label>
+			<input type="text" id="fullname" name="fullname" ng-disabled="can_create" ng-model="fullname" required><br/><br/>
+			<label for="info">Information*</label>
+			<input type="text" id="info" name="info" ng-disabled="can_create" ng-model="info" required><br/><br/>
 			<label for="code">Code</label>
 			<input type="text" id="code" name="code" ng-disabled="can_create" ng-model="code" />
+			<!--label for="cImage">Upload Photo</label>
+			<input type="file" /-->
 			<br/>
 			<br/>
 			<button id="add" name="add"class="btn" ng-disabled="can_create" ng-click="addContestant();">
