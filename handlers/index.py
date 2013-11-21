@@ -43,7 +43,7 @@ class UserHandler(ApiHandler):
         else:
             result = {
                 "user_logged_in": False,
-                "login_url": users.create_login_url('/')
+                "login_url": users.create_login_url('/#/createPoll')
             }
 
         self.render_object(result, 200)
