@@ -158,7 +158,7 @@ pollplusModule.factory('pollService', function($http) {
 		},
 		getVotes:function(pollId)
 		{
-		    var url='/polls/'+pollId+'/votes';
+		    var url=baseURL+'/polls/'+pollId+'/votes';
 		    return $http.get(url);
 		}
 	}
