@@ -26,11 +26,12 @@ function CreatePollController($scope, pollService) {
         $scope.info = "";
         $scope.code="";
         console.log($scope.contestants);
-        if ($scope.contestants.length >= 2) {
-            $scope.can_create = "disabled";
-        };
     };
     $scope.can_create = "";
+    $scope.$watch('contestants', function(newVal, oldVal) {
+        $scope.can_create = newVal.length >= 2 ? "disabled" : "";
+        $scope.add_button_class = newVal.length >= 2 ? "btn-danger" : "btn-success";
+    }, true);
     $scope.createPoll = function() {
 
         var conts = $scope.contestants;     
