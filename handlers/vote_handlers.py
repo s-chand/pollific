@@ -18,6 +18,21 @@ class VoteHandler(ApiHandler):
         self.render_object({}, 405)
 
 
+class UnvoteHandler(ApiHandler):
+    def post(self, poll_id):
+        request = self.request.body
+        #extract the post body then return
+        data = json.loads(request)
+        user = data['voter']
+        contestant = data['contestant']
+        value= data['value']
+        result = crud.unvote(user, contestant, poll_id, value)
+        self.render_object(result, 201)
+
+    def get(self):
+        self.render_object({}, 405)
+
+
 class VotesHandler(ApiHandler):
     def post(self):
         self.render_object({},405)
@@ -25,3 +40,7 @@ class VotesHandler(ApiHandler):
     def get(self, poll_id):
         result = crud.getVotesInPoll(poll_id)
         self.render_object(result, 200)
+
+
+
+

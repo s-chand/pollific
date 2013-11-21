@@ -4,6 +4,7 @@ __author__ = 'Tomiwa Ijaware'
 __modified_by__ = 'Adekola Adebayo'
 from models.poll import Poll, Vote, Contestant
 from google.appengine.ext import ndb
+from collections import Counter
 
 
 def makePoll(ownerID, title, desc, type, status, contestants=None):
@@ -65,7 +66,8 @@ def getPollDetails(poll_id):
                 "description": poll.description,
                 "ownerID": poll.ownerID,
                 "status":poll.status,
-                "type": poll.type
+                "type": poll.type,
+                "date_added": poll.date_added
             }
 
         else:
@@ -96,13 +98,15 @@ def vote(voter, contestant, poll, value):
     # step 1. Get the Poll and the User's Entry
     # step 2.
     #check if the poll exists ooooo!!!!
-    votes = Vote.query(Vote.poll==poll and Vote.voter==voter).fetch()
-    if not votes: #i.e no votes already cast
+    votes = Vote.query(Vote.poll==poll, Vote.voter==voter).fetch()
+    if votes: #i.e  votes already cast
+        result = {"error": "A vote has already been cast in this poll by the voter"}
+    else: #Voter has not yet cast votes for this poll
         try:
             vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
             key = vote.put()
             vote_id = str(key.id())
-            result= {
+            result            = {
             "vote_id": vote_id,
             "poll_id": vote.poll,
             "contestant_id": vote.contestant,
@@ -111,8 +115,22 @@ def vote(voter, contestant, poll, value):
 
         except ValueError as e:
             result = {"error": "There has been an error %s "%e }
-    else:
-        result = {"error": "A vote has already been cast in this poll by the voter"}
+
+
+    return result
+
+#thsi removes a vote for a contestant from a given poll
+def unvote(voter, contestant, poll, value):
+    votes = Vote.query(Vote.poll==poll, Vote.voter==voter, Vote.contestant==contestant).fetch()
+    if not votes: #i.e no votes already cast
+        result = {"error": "Voter has not cast a vote in this poll"}
+    else: #Voter has not yet cast votes for this poll
+        try:
+            for v in votes:
+                v.key.delete()
+            result = {"result": "Vote successfully removed"}
+        except ValueError as e:
+            result = {"error": "There has been an error %s "%e }
 
 
     return result
@@ -122,11 +140,12 @@ def getVotesInPoll(poll_id):
     try:
         votes = Vote.query(Vote.poll == poll_id).fetch()
         if votes: #i.e there have been votes cast in this poll
-            votes_list = list()
+            poll_results = list()
+            contestants = list()
             for vote in votes:
-                votes_list.append({"contestant_voted": vote.contestant, "vote_value": vote.value})
+                contestants.append(vote.contestant)
 
-            poll_votes = {"poll_id": poll_id, "poll_votes": votes_list}
+            poll_votes = {"poll_id": poll_id, "poll_results": Counter(contestants)}
             return poll_votes
 
         else:
@@ -154,7 +173,6 @@ def getContestantDetails(contestant_id):
     except KeyError as e:
         return {"error": "There has been an error: %s"%e }
 
-
 # we need to decide if and how unvoting will be done
 def removeVote(contestant, poll, user):
     vote = Vote.query(poll=poll, user=user).fetch()
@@ -169,3 +187,22 @@ def removeVote(contestant, poll, user):
         "contestant": v.contestant,
         "value": v.value
     } 
+
+def getPollsByUser(user_id):
+    try:
+        polls = Poll.query(Poll.ownerID == user_id).fetch()
+        user_polls = list()
+        if polls is not None:
+            for poll in polls:
+                user_polls.append({"poll_id": poll.key.id(), "title": poll.title, "description": poll.description})
+
+            return {"user_id": user_id, "user_polls": user_polls}
+
+        else:
+            return {"error": "No Polls have been created by user yet"}
+
+    except LookupError as e:
+        return {"error": "There has been an error: %s"%e}
+
+
+

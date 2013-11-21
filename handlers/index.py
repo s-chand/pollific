@@ -3,11 +3,13 @@ from handlers.base import BaseHandler
 import webapp2
 import logging
 import json
+from google.appengine.api import users
 
 class MainHandler(BaseHandler):
     def get(self):
         # Insert useful code here
         self.render_template('index.html')
+
 
 
 class ApiHandler(BaseHandler):
@@ -26,6 +28,37 @@ class ApiHandler(BaseHandler):
         self.response.set_status(response_code)
         self.response.write(json.dumps(result))
 
+
+class UserHandler(ApiHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            result = { "user_logged_in": True,
+                       "user_id": users.get_current_user().user_id(),
+                       "user_name": users.get_current_user().nickname()}
+
+        else:
+            result = {
+                "user_logged_in": False
+            }
+
+        self.render_object(result, 200)
+
+    def post(self):
+        pass
+
+class URLsHandler(ApiHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            result = { "logout_url": users.create_logout_url('/')}
+        else:
+            result = {"login_url":  users.create_login_url('/') }
+
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({},405)
 
 #it appears this has not a found a use yet..but should soon...
 def getResponseMessage(code):
