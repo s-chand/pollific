@@ -198,5 +198,5 @@ function LogOutCtrl($scope,authService)
             $scope.logoutUrl=result.logout_url;
             $scope.user_name=result.user_name;
         }
-    })
+    });
 }
