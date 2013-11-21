@@ -7,9 +7,11 @@ from google.appengine.api import users
 
 class MainHandler(BaseHandler):
     def get(self):
-        # Insert useful code here
-        self.render_template('index.html')
-
+        user = users.get_current_user()
+        if user:
+            self.render_template('index.html')
+        else:
+            self.render_template('landing.html')
 
 
 class ApiHandler(BaseHandler):
@@ -35,11 +37,13 @@ class UserHandler(ApiHandler):
         if user:
             result = { "user_logged_in": True,
                        "user_id": users.get_current_user().user_id(),
-                       "user_name": users.get_current_user().nickname()}
+                       "user_name": users.get_current_user().nickname(),
+                       "logout_url": users.create_logout_url('/')}
 
         else:
             result = {
-                "user_logged_in": False
+                "user_logged_in": False,
+                "login_url": users.create_login_url('/')
             }
 
         self.render_object(result, 200)
@@ -47,18 +51,6 @@ class UserHandler(ApiHandler):
     def post(self):
         pass
 
-class URLsHandler(ApiHandler):
-    def get(self):
-        user = users.get_current_user()
-        if user:
-            result = { "logout_url": users.create_logout_url('/')}
-        else:
-            result = {"login_url":  users.create_login_url('/') }
-
-        self.render_object(result, 200)
-
-    def post(self):
-        self.render_object({},405)
 
 #it appears this has not a found a use yet..but should soon...
 def getResponseMessage(code):
