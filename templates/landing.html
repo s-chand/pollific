@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- Masthead
+================================================== -->
+<header class="jumbotron" id="overview">
+  <div class="row">
+    <div class="span6">
+      <h1>Polls+</h1>
+      <p class="lead">Vote free. Vote Now.</p>
+      
+    </div>
+  </div>
+ <hr/>
+</header>
+<div class="row" >
+	<!--Render these only if the user is Logged in -->
+<div class="span8 pull-left" >
+	
+</div>
+</div>
+
+{% endblock body %}
+
+{% block script %}
+<script src="/static/js/bootstrap.min.js"></script>
+{% endblock script %}
+
+{% block footer%}
+<hr/>
+<div class="footer well well-large">
+	(c) Copyright 2013 Tropic Dreams Studio. All Rights Reserved. 
+</div>
+{% endblock footer%}

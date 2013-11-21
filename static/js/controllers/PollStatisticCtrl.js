@@ -10,8 +10,7 @@ function PollStatsController($scope, $routeParams, pollService) {
     //Get the Poll statistics
     var data = pollService.getPolls();
     data.success(function(pollss){
-        
-    
+ 
     console.log(pollss);
     var pollStat = {};
     for (var i = 0; i < pollss.length; i++) {
@@ -25,7 +24,13 @@ function PollStatsController($scope, $routeParams, pollService) {
     }
     var data2=pollService.getVotes($scope.pollId);
     data2.success(function(result){
+        if(result.error)
+        {
+            $scope.pollStatistic.voteCount=0;
+        }
+        else{
        $scope.pollStatistic.voteCount=result; 
+       }
     });
     });
     //call the pollService to get the voteCount
