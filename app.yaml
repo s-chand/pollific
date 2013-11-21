@@ -1,5 +1,5 @@
-application: poll-plus
-version: 2
+application: gcdc2013-pollplus
+version: 1
 runtime: python27
 api_version: 1
 threadsafe: yes
