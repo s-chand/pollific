@@ -2,7 +2,8 @@
  * Created by LRB on 10/28/13.
  */
 
-var pollplusModule = angular.module("PollPlus", []);
+var pollplusModule = angular.module("PollPlus", [])
+
 var baseURL = "/api";
 
 var polls = [{
@@ -162,9 +163,5 @@ pollplusModule.factory('pollService', function($http) {
 		}
 	}
 });
-function NavCtrl($scope)
-{
-    $scope.username="Samuel Okoroafor";
-}
 
 

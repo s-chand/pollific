@@ -22,7 +22,7 @@
                     	<h3> {{contestant.name}}</h3>
                         <p> {{contestant.information}}</p>
                         <br /><br />
-                        <p><button class="{{btnClass}}" ng-disabled="status" ng-click="vote(contestant.contestant_id,poll.poll_id)">{{action}}</button></p>
+                        <p><button class="{{btnClass}}" ng-disabled="status" ng-click="vote(contestant.contestant_id,poll.poll_id,$index)">{{action}}</button></p>
                     </div>
                     
                 </div>

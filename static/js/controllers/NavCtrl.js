@@ -1,8 +1,3 @@
-/**
- * @author LRB
- */
-
-// function NavCtrl($scope)
-//{
-    //$scope.username="Samuel Okoroafor";
-//}
+angular.module("PollPlus").controller('NavCtrl',function($scope){
+    $scope.usn="Samuel Okoroafor";
+});

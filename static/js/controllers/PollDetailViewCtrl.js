@@ -33,9 +33,9 @@ function PollDetailController($scope, $routeParams, pollService) {
 
     $scope.poll = data;
 
-    $scope.vote = function(contestantId,pollId) {
+    $scope.vote = function(contestantId,pollId,index) {
        alertify.success("Voting....");
-       
+       console.log(index);
        //Logic: User clicks vote
        //Change button to unvote and disable other buttons
        var voter="samuel.i.okoroafor@gmail.com";

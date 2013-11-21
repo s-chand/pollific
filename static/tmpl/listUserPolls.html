@@ -16,8 +16,8 @@
 <table class="table table-hover table-striped">
 	<tr ng-repeat='poll in polls'>
 		
-		<td >
-			<h3>{{poll.title}}</h3> 
+		<td>
+			<h3><a ng-href=" #/view/{{poll.poll_id}}">{{poll.title}}</a></h3> 
 			<p>{{poll.description}}</p>
 			<br/>
 			<p>
