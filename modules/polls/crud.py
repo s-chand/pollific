@@ -102,15 +102,29 @@ def vote(voter, contestant, poll, value):
     # step 1. Get the Poll and the User's Entry
     # step 2.
     #check if the poll exists!!!!
-    votes = Vote.query(Vote.poll==poll, Vote.voter==voter).fecth()
-    if votes: #voter has voted in this vote already
+    votes = Vote.query(Vote.poll==poll, Vote.voter==voter).fetch()
+    if votes: #voter has voted in this poll already
         for vote in votes:
              #check if the vote is for an existing contestant,
              # if yes, bounce user,
             if vote.contestant == contestant:
                 result = {"error": "Voter has already voted for this contestant "}
-            else:
-                result = unvote(voter, contestant, poll, value)
+            else: #this is a vote for another contestant, remove the one in the db and add the new one
+                unvote(voter, vote.contestant, poll, value)
+                try:
+                    vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
+                    key = vote.put()
+                    vote_id = str(key.id())
+                    result            = {
+                    "vote_id": vote_id,
+                    "poll_id": vote.poll,
+                    "contestant_id": vote.contestant,
+                    "value": vote.value }
+                    return result
+
+                except ValueError as e:
+                    result = {"error": "There has been an error %s "%e }
+
     else: #Voter has not yet cast votes for this poll
         try:
             vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
@@ -131,9 +145,7 @@ def vote(voter, contestant, poll, value):
 #thsi removes a vote for a contestant from a given poll
 def unvote(voter, contestant, poll, value):
     votes = Vote.query(Vote.poll==poll, Vote.voter==voter, Vote.contestant==contestant).fetch()
-    if not votes: #i.e no votes already cast
-        result = {"error": "Voter has not cast a vote in this poll"}
-    else: #Voter has not yet cast votes for this poll
+    if votes:
         try:
             for v in votes:
                 v.key.delete()
@@ -141,6 +153,8 @@ def unvote(voter, contestant, poll, value):
         except ValueError as e:
             result = {"error": "There has been an error %s "%e }
 
+    else: #Voter has not yet cast votes for this poll
+        result = {"error": "Voter has not cast a vote in this poll"}
 
     return result
 
@@ -219,7 +233,7 @@ def getPollsByUser(user_id):
 
 
 def getUserVoteInPoll(user_id, poll_id):
-    vote = Vote.query(Vote.voter==user_id, Vote.poll==poll_id).fetch()
+    vote = Vote.query(Vote.voter==user_id, Vote.poll==str(poll_id)).fetch()
     if vote:
         #just the first matching guy
         result = {"contestant_voted": vote[0].contestant}
