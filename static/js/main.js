@@ -138,6 +138,33 @@ pollplusModule.factory('pollService', function($http) {
 			// body...
 			var url=baseURL+'/polls/'+pollId+'/vote';
 			return $http.post(url,data);
+		}, 
+		unvote : function(pollId,data) {
+            // body...
+            var url=baseURL+'/polls/'+pollId+'/vote';
+            return $http.post(url,data);
+        }, 
+		//User related service functions
+		getUserId : function() {
+			var url = '/';
+			$http.get(url).success(function(data) {
+				console.log("SUCCESS: " + data);
+				return data;
+
+			}).error(function(data) {
+				console.log("ERROR: " + data);
+			})
+		},
+		getLoggedInUser:function(){
+		    
+		},
+		isUserLoggedIn:function(){
+		    
+		},
+		getVotes:function(pollId)
+		{
+		    var url=baseURL+'/polls/'+pollId+'/votes';
+		    return $http.get(url);
 		}
 	}
 });
@@ -166,7 +193,7 @@ pollplusModule.factory('authService',function($http){
             var url=baseURL+'/polls/'+pollId+'/votes';
             return $http.get(url);
         }
-        }
+        };
 });
 function LandingCtrl($scope,pollService,authService)
 {
