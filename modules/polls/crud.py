@@ -8,7 +8,7 @@ from collections import Counter
 
 
 def makePoll(ownerID, title, desc, type, status, contestants=None):
-    try:
+   try:
         nPoll = Poll(title=title, description=desc, ownerID=ownerID,type=type, status=status)
         key = nPoll.put()
         id = str(key.id())
@@ -21,8 +21,8 @@ def makePoll(ownerID, title, desc, type, status, contestants=None):
         result = {"poll_id": id, "title": title, "description": desc, "ownerID": ownerID, "contestants": contestants_results }
         return result
 
-    except:
-        return {"error": "There has been an error" }
+   except KeyError as e:
+        return {"error": "There has been an error These key(s) are missing: %s"%e }
 
 #this method is used by the makePoll method above to create contestants to a Poll on the fly
 def addContestant(name, poll, photoURL, info, code=""):
