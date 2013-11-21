@@ -86,16 +86,54 @@
             <td>http://poll-plus.appspot.com/api/polls/7476728947927857/vote</td>
         </tr>
         <tr>
+            <td>/api/polls/poll_id/unvote</td>
+            <td>POST</td>
+            <td>Removes a vote from a particular poll</td>
+            <td>The poll id for which the vote should be removed and the message body should contain something like this
+                - {"voter": "49787873793", "contestant": "975783676476863", "value": "Yes or No"}</td>
+            <td>{"result" : "Vote successfully removed"}</td>
+            <td>http://poll-plus.appspot.com/api/polls/7476728947927857/unvote</td>
+        </tr>
+        <tr>
             <td>/api/polls/poll_id/votes</td>
             <td>GET</td>
             <td>GETs the votes for a particular poll</td>
             <td>The poll id for which votes should be gotten</td>
-            <td>{"poll_id": poll_id,
-             "poll_votes": [{"contestant_voted": "75787378263767", "vote_value": "True or False},
-             {"contestant_voted": "7578736849683897", "vote_value": "True or False"},
-             {"contestant_voted": "75785687387878767", "vote_value": "True or False"}]}
+            <td>{
+                    "poll_results": {
+                        "5066549580791808": 1
+                    },
+                    "poll_id": "4785074604081152"
+                }
             </td>
             <td>http://poll-plus.appspot.com/api/polls/747674926864657/votes</td>
+        </tr>
+        <tr>
+            <td>/api/polls/user/user_id</td>
+            <td>GET</td>
+            <td>GETs the polls created by a particular user</td>
+            <td>The user id for which polls should be gotten</td>
+            <td>{"user_polls": [{"description": "desc", "poll_id": 4785074604081152, "title": "title"},
+                {"description": "desc", "poll_id": 5629499534213120, "title": "title"}],
+                "user_id": "ownerID"}
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/user/747674926864657/</td>
+        </tr>
+        <tr>
+            <td>/api/users/urls</td>
+            <td>GET</td>
+            <td>GETs the login url for the application</td>
+            <td>---</td>
+            <td>{"login_url": "http://whatever", "logout_url": "http://what-is-this-sef"}</td>
+            <td>http://poll-plus.appspot.com/api/users/urls/</td>
+        </tr>
+        <tr>
+            <td>/api/users/current_user</td>
+            <td>GET</td>
+            <td>GETs the details of the currently logged in user if there is, ese returns a boolean to that effect</td>
+            <td>---</td>
+            <td>{"user_logged_in": "True/False", "user_id": "you@me.com", "user_name": "some fancy name"}</td>
+            <td>http://poll-plus.appspot.com/api/users/current_user/</td>
         </tr>
 
     </tbody>
