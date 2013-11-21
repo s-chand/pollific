@@ -4,39 +4,34 @@
 		<link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css" />
 		<link rel="stylesheet" href="/static/css/bootswatch.css" />
 	</head>
-	<body>
+	<body style="background-image:url('/static/img/bgImage.jpg')">
 		<div class="container-fluid">
-			<nav class="span8 offset3">
-				<div class="pull-right" style="margin-top:10px" >
-				<a class="btn btn-block btn-danger" href="#">Login with Google</a>
-				</div>
-			</nav>
-			
 			<div class="row" style="margin-top:160px">
 				
-				<div class="span12 offset1">
-					
-					<div class="span6">
-						<h1 class="brand">Polls+</h1>
-					<img src="/static/img/6.jpg" />
-					</div>
+				<div class="span11 offset2">
+					<div class="span6" ng-include src="'/static/tmpl/nav2.html'"></div>
+					<!--img src="/static/img/6.jpg" /-->
 					<div class="card span4">
-						<div class="card-heading">
-							<h3>Popular polls</h3>
+						<div class="card-heading" style="color:#F1F1F1">
+							<h3 style="color:#F1F1F1">Popular polls</h3>
 						</div>
 						<div ng-include src="'/static/tmpl/landingPage.html'">
 							
 						</div>
 						
-					</div>
 				</div>
+				
 			</div>
-			<hr />
-			<footer class="pull-right">
-			(c) Tropic Dreams Studio 2013
-			<img src="https://developers.google.com/appengine/images/appengine-noborder-120x30.gif" 
-alt="Powered by Google App Engine" />
+			
+			<div class="clearfix"></div>
+			<br/>
+		<br/>
+			<footer style="color:#F1F1F1" class="span10 offset2">
+			<div class="pull-left">(c) Tropic Dreams Studio 2013</div><div class="pull-right"> <img src="https://developers.google.com/appengine/images/appengine-noborder-120x30.gif" 
+alt="Powered by Google App Engine" /></div>
+			
 		</footer>
+			
 		</div>
 		
 		<script src="/static/js/angular.min.js"></script>
