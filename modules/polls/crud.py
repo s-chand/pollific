@@ -5,6 +5,7 @@ __modified_by__ = 'Adekola Adebayo'
 from models.poll import Poll, Vote, Contestant
 from google.appengine.ext import ndb
 from collections import Counter
+from google.appengine.api import users
 
 
 def makePoll(ownerID, title, desc, type, status, contestants=None):
@@ -57,6 +58,8 @@ def getPolls(user = None):
 
 #this retrieves full details of a poll whose id is supplied
 def getPollDetails(poll_id):
+    user= users.get_current_user()
+    user_id = user.user_id()
     try:
         poll = Poll.get_by_id(poll_id)
         if poll is not None:
@@ -67,7 +70,8 @@ def getPollDetails(poll_id):
                 "ownerID": poll.ownerID,
                 "status":poll.status,
                 "type": poll.type,
-                "date_added": poll.date_added.strftime('%m/%d/%Y')
+                "date_added": poll.date_added.strftime('%m/%d/%Y'),
+                "user_vote": getUserVoteInPoll(user_id, poll_id)
             }
 
         else:
@@ -97,10 +101,16 @@ def getPollContestants(poll_id):
 def vote(voter, contestant, poll, value):
     # step 1. Get the Poll and the User's Entry
     # step 2.
-    #check if the poll exists ooooo!!!!
-    votes = Vote.query(Vote.poll==poll, Vote.voter==voter).fetch()
-    if votes: #i.e  votes already cast
-        result = {"error": "A vote has already been cast in this poll by the voter"}
+    #check if the poll exists!!!!
+    votes = Vote.query(Vote.poll==poll, Vote.voter==voter).fecth()
+    if votes: #voter has voted in this vote already
+        for vote in votes:
+             #check if the vote is for an existing contestant,
+             # if yes, bounce user,
+            if vote.contestant == contestant:
+                result = {"error": "Voter has already voted for this contestant "}
+            else:
+                result = unvote(voter, contestant, poll, value)
     else: #Voter has not yet cast votes for this poll
         try:
             vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
@@ -115,7 +125,6 @@ def vote(voter, contestant, poll, value):
 
         except ValueError as e:
             result = {"error": "There has been an error %s "%e }
-
 
     return result
 
@@ -209,4 +218,11 @@ def getPollsByUser(user_id):
         return {"error": "There has been an error: %s"%e}
 
 
+def getUserVoteInPoll(user_id, poll_id):
+    vote = Vote.query(Vote.voter==user_id, Vote.poll==poll_id).fetch()
+    if vote:
+        #just the first matching guy
+        result = {"contestant_voted": vote[0].contestant}
+    else:
+        return {"error": "User has not voted in the specified poll"}
 
