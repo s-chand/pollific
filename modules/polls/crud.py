@@ -67,7 +67,7 @@ def getPollDetails(poll_id):
                 "ownerID": poll.ownerID,
                 "status":poll.status,
                 "type": poll.type,
-                "date_added": poll.date_added
+                "date_added": poll.date_added.strftime('%m/%d/%Y')
             }
 
         else:
@@ -145,7 +145,11 @@ def getVotesInPoll(poll_id):
             for vote in votes:
                 contestants.append(vote.contestant)
 
-            poll_votes = {"poll_id": poll_id, "poll_results": Counter(contestants)}
+            summary  = Counter(contestants)
+            for key, val in summary.items():
+                poll_results.append({"contestant_id": key, "votes": val})
+
+            poll_votes = {"poll_id": poll_id, "poll_results": poll_results}
             return poll_votes
 
         else:
