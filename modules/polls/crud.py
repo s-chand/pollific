@@ -219,7 +219,7 @@ def getPollsByUser(user_id):
     try:
         polls = Poll.query(Poll.ownerID == user_id).fetch()
         user_polls = list()
-        if polls is not None:
+        if polls:
             for poll in polls:
                 user_polls.append({"poll_id": poll.key.id(), "title": poll.title, "description": poll.description})
 
@@ -229,6 +229,23 @@ def getPollsByUser(user_id):
             return {"error": "No Polls have been created by user yet"}
 
     except LookupError as e:
+        return {"error": "There has been an error: %s"%e}
+
+def getPollsUserVoted(user_id):
+     try:
+        votes = Vote.query(Vote.voter == user_id).fetch()
+        user_polls = list()
+        if votes:
+            for vote in votes:
+                poll_vote = Poll.get_by_id(vote.poll)
+                user_polls.append({"poll_id": poll_vote.key.id(), "title": poll_vote.title, "description": poll_vote.description})
+
+            return {"user_id": user_id, "user_polls": user_polls}
+
+        else:
+            return {"error": "No Polls have been created by user yet"}
+
+     except LookupError as e:
         return {"error": "There has been an error: %s"%e}
 
 
