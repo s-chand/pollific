@@ -139,6 +139,11 @@ pollplusModule.factory('pollService', function($http) {
 			var url=baseURL+'/polls/'+pollId+'/vote';
 			return $http.post(url,data);
 		}, 
+		unvote : function(pollId,data) {
+            // body...
+            var url=baseURL+'/polls/'+pollId+'/vote';
+            return $http.post(url,data);
+        }, 
 		//User related service functions
 		getUserId : function() {
 			var url = '/';
