@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="172acebe-20d2-489e-85cb-bdbf1045d1c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/polls/crud.py" afterPath="$PROJECT_DIR$/modules/polls/crud.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/api.html" afterPath="$PROJECT_DIR$/templates/api.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/index.py" afterPath="$PROJECT_DIR$/handlers/index.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pollific.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +13,7 @@
     <file path="/base.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383578726390" ignored="false" />
     <file path="/index.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383978717329" ignored="false" />
     <file path="/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980696907" ignored="false" />
-    <file path="/index.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385023394336" ignored="false" />
+    <file path="/index.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385026186295" ignored="false" />
     <file path="/poll_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384443766670" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/statics/js/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980697979" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/logic/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980857308" ignored="false" />
@@ -31,7 +30,7 @@
     <file path="/models.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383979050398" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/models/models.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980203339" ignored="false" />
     <file path="/routes.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384992931788" ignored="false" />
-    <file path="/api.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384992780316" ignored="false" />
+    <file path="/api.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385026234643" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
       <file leaf-file-name="routes.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="75" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.0">
+            <state line="40" column="0" selection-start="2454" selection-end="2454" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,7 +116,7 @@
       <file leaf-file-name="crud.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="0" selection-start="3255" selection-end="3255" vertical-scroll-proportion="0.0">
+            <state line="138" column="4" selection-start="4914" selection-end="4914" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,8 +125,17 @@
       <file leaf-file-name="index.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handlers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="42" selection-start="353" selection-end="353" vertical-scroll-proportion="0.031481482">
-              <folding />
+            <state line="8" column="18" selection-start="192" selection-end="192" vertical-scroll-proportion="0.12592593">
+              <folding>
+                <element signature="e#397#971#0" expanded="false" />
+                <element signature="e#397#532#1" expanded="false" />
+                <element signature="e#561#593#0" expanded="false" />
+                <element signature="e#655#971#0" expanded="false" />
+                <element signature="e#1009#1565#0" expanded="false" />
+                <element signature="e#1032#1528#0" expanded="false" />
+                <element signature="e#1558#1562#0" expanded="false" />
+                <element signature="e#1662#2162#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,7 +143,7 @@
       <file leaf-file-name="api.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/api.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="13" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.0">
+            <state line="130" column="63" selection-start="7098" selection-end="7098" vertical-scroll-proportion="-13.384615">
               <folding />
             </state>
           </provider>
@@ -166,11 +174,11 @@
         <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/models/poll.py" />
         <option value="$PROJECT_DIR$/handlers/poll_handlers.py" />
-        <option value="$PROJECT_DIR$/templates/api.html" />
-        <option value="$PROJECT_DIR$/routes.py" />
-        <option value="$PROJECT_DIR$/handlers/index.py" />
         <option value="$PROJECT_DIR$/handlers/vote_handlers.py" />
         <option value="$PROJECT_DIR$/modules/polls/crud.py" />
+        <option value="$PROJECT_DIR$/handlers/index.py" />
+        <option value="$PROJECT_DIR$/templates/api.html" />
+        <option value="$PROJECT_DIR$/routes.py" />
       </list>
     </option>
   </component>
@@ -475,13 +483,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37954545" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37954545" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -621,16 +629,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/api.html">
+    <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="13" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="75" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.0">
+        <state line="34" column="29" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -642,24 +643,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
+    <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="29" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
+        <state line="138" column="4" selection-start="4914" selection-end="4914" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
+    <entry file="file://$PROJECT_DIR$/templates/api.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="0" selection-start="3255" selection-end="3255" vertical-scroll-proportion="0.0">
+        <state line="130" column="63" selection-start="7098" selection-end="7098" vertical-scroll-proportion="-13.384615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="2454" selection-end="2454" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="353" selection-end="353" vertical-scroll-proportion="0.031481482">
-          <folding />
+        <state line="8" column="18" selection-start="192" selection-end="192" vertical-scroll-proportion="0.12592593">
+          <folding>
+            <element signature="e#397#971#0" expanded="false" />
+            <element signature="e#397#532#1" expanded="false" />
+            <element signature="e#561#593#0" expanded="false" />
+            <element signature="e#655#971#0" expanded="false" />
+            <element signature="e#1009#1565#0" expanded="false" />
+            <element signature="e#1032#1528#0" expanded="false" />
+            <element signature="e#1558#1562#0" expanded="false" />
+            <element signature="e#1662#2162#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -38,8 +38,6 @@ _routes = [
         RedirectRoute('/polls/user/<user_id>', handler = 'handlers.poll_handlers.UserPollsHandler', name = 'vote_uri'),
         #GETs the details for the currently logged in user
         RedirectRoute('/users/current_user', handler = 'handlers.index.UserHandler', name = 'vote_uri'),
-        #GETs the login and logout URLs for a particular user
-        RedirectRoute('/users/urls', handler = 'handlers.index.URLsHandler', name = 'vote_uri'),
 
     ]),
     PathPrefixRoute('/u',[
