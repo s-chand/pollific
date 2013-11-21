@@ -2,21 +2,12 @@
 {% block body %}
 <!-- Masthead
 ================================================== -->
-<!-- <header class="jumbotron" id="overview">
-  <div class="row">
-    <div class="span6">
-      <h1>Polls+</h1>
-      <p class="lead">Vote free. Vote Now.</p>
-      
-    </div>
-  </div>
- <hr/>
-</header> -->
+<header class="jumbotron" id="overview">
+</header>
 <div class="row" >
 	<!--Render these only if the user is Logged in -->
 	
 	<div class="span3 bs-docs-sidebar">
-		<div ng-controller="NavCtrl"><span ng-bind="usn"></span></div>
         <ul class="nav nav-list bs-docs-sidenav affix-top">
           <li><a ng-href="/#createPoll"><i class="icon-check"></i> Create Poll <i class="icon-chevron-right"></i></a></li>
           <li><a href="/#pollsVoted"><i class="icon-volume-down"></i> Polls you Voted<i class="icon-chevron-right"></i></a></li>
@@ -45,6 +36,7 @@
 {% block footer%}
 <hr/>
 <div class="footer well well-large">
-	(c) Copyright 2013 Tropic Dreams Studio. All Rights Reserved. 
+	(c) Copyright 2013 Tropic Dreams Studio. All Rights Reserved. <img src="https://developers.google.com/appengine/images/appengine-noborder-120x30.gif" 
+alt="Powered by Google App Engine" />
 </div>
 {% endblock footer%}

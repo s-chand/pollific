@@ -168,5 +168,62 @@ pollplusModule.factory('pollService', function($http) {
 		}
 	}
 });
+pollplusModule.factory('authService',function($http){
+    //User related service functions
+    return{
+        getUserId : function() {
+            var url = '/';
+            $http.get(url).success(function(data) {
+                console.log("SUCCESS: " + data);
+                return data;
 
-
+            }).error(function(data) {
+                console.log("ERROR: " + data);
+            })
+        },
+        getLoggedInUser:function(){
+            var url=baseURL+'/users/current_user';
+            return $http.get(url);
+        },
+        isUserLoggedIn:function(){
+            
+        },
+        getVotes:function(pollId)
+        {
+            var url=baseURL+'/polls/'+pollId+'/votes';
+            return $http.get(url);
+        }
+        };
+});
+function LandingCtrl($scope,pollService,authService)
+{
+    //pass in the service to get the list of mock polls
+    //console.log(pollService.getUserId());
+    var data=authService.getLoggedInUser();
+    data.success(function(result){
+        if(result.login_url && result.user_logged_in==false)
+        {
+            $scope.loginUrl=result.login_url;
+            console.log($scope.loginUrl);
+        }
+      
+    });
+    $scope.username="Samuel Okoroafor";
+    var data = pollService.getPolls();
+    data.success(function(d) {
+        $scope.polls = d;
+        console.log("smokes");
+    });
+    console.log(data);
+}
+function LogOutCtrl($scope,authService)
+{
+    var data=authService.getLoggedInUser();
+    data.success(function(result){
+        if(result.logout_url && result.user_logged_in==true)
+        {
+            $scope.logoutUrl=result.logout_url;
+            $scope.user_name=result.user_name;
+        }
+    })
+}
