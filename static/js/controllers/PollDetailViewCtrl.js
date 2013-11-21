@@ -7,7 +7,7 @@
  * Handles all the gymnastics for the pollDetails view
  */
 
-function PollDetailController($scope, $routeParams, pollService) {
+function PollDetailController($scope, $routeParams, pollService, authService) {
     //a model to control the display text on  the button
     //the idea is to scope features for the buttons such that they can be manipulated all at once
     /**
@@ -15,6 +15,10 @@ function PollDetailController($scope, $routeParams, pollService) {
      * Check the user's login details before setting these values
      */
     $scope.contestants = [];
+    var userData = authService.getLoggedInUser();
+    userData.success(function(result) {
+        $scope.user_id =result.user_id;
+    });
     var data = pollService.getPollById($routeParams.id);
     data.success(function(d) {
         $scope.poll = d;
@@ -39,14 +43,15 @@ function PollDetailController($scope, $routeParams, pollService) {
     $scope.vote = function(index) {
         c = $scope.contestants[index];
         alertify.success("Voting....");
-        var voter = "samuel.i.okoroafor@gmail.com";
+        var voter = $scope.user_id;
         var voteData = {
             voter : voter,
             contestant : c.id,
             value : "Yes"
         };
-        
+
         var data = pollService.vote($scope.poll.poll_id, voteData);
+        $scope.contestants[index].disabled = true;
         data.success(function(result) {
             if (result.error) {
                 alertify.error("Oh snap! You cannot vote twice");
@@ -55,28 +60,10 @@ function PollDetailController($scope, $routeParams, pollService) {
                 value.disabled = false;
                 value.class = "btn-success";
             });
-            $scope.contestants[index].disabled=true;
-            $scope.contestants[index].class="btn-danger";
+            
+            $scope.contestants[index].class = "btn-danger";
+            $scope.contestants[index].disabled = true;
         });
-    };
-
-    $scope.unvote = function(contestantId, pollId, index) {
-        alertify.success("Removing Vote....");
-        var voter = "samuel.i.okoroafor@gmail.com";
-        var voteData = {
-            voter : voter,
-            contestant : contestantId,
-            value : "No"
-        };
-
-        var data = pollService.vote(pollId, voteData);
-        data.success(function(result) {
-            if (result.error) {
-                alertify.error("Oh snap! You cannot vote twice");
-            }
-        });
-        $scope.btnClass = "btn-success";
-        $scope.action = $scope.actionReverse;
     };
 }
 
