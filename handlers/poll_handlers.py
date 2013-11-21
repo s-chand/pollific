@@ -2,6 +2,7 @@ import json
 
 from modules.polls import crud
 from handlers.index import ApiHandler
+from google.appengine.api import users
 
 
 class PollsHandler(ApiHandler):
@@ -15,16 +16,22 @@ class PollsHandler(ApiHandler):
         #extract the post body then return
         data = dict(json.loads(request))
         user = data['ownerID']
-        title = data['title']
-        desc = data['description']
-        status = data['status']
-        type= data['type']
-        if data.keys().__contains__('contestants'):
-            contestants = list(data['contestants'])
-            if len(contestants) > 0:
-                result = crud.makePoll(user, title, desc, type, status,contestants)
+        if user and user == users.get_current_user().user_id():
+            title = data['title']
+            desc = data['description']
+            status = data['status']
+            type= data['type']
+            if data.keys().__contains__('contestants'):
+                contestants = list(data['contestants'])
+                if len(contestants) > 0:
+                    result = crud.makePoll(user, title, desc, type, status,contestants)
+            else:
+                result = crud.makePoll(user, title, desc, type, status)
+
         else:
-            result = crud.makePoll(user, title, desc, type, status,)
+            result = {"error": "You are not logged in to PollPlus.you hav to log in to create a poll"}
+
+
 
         self.render_object(result, 201)
 
