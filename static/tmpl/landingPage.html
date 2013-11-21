@@ -1,0 +1,16 @@
+<div ng-controller="PollListController" style="overflow:scroll;max-height:300px;">
+
+<table class="table table-hover table-striped">
+	<tr ng-repeat='poll in polls | limitTo:3'>
+		
+		<td>
+			<h3><a ng-href=" #/view/{{poll.poll_id}}">{{poll.title}}</a></h3> 
+			<p>{{poll.description}}</p>
+			<br/>
+			<p>
+				<a class="btn btn-warning" ng-href="#/poll/{{poll.poll_id}}">Stats</a> <a class="btn btn-success" ng-href=" #/view/{{poll.poll_id}}">Details</a>
+			</p>
+		</td>
+	</tr>
+</table>
+</div>

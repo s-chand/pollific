@@ -1,33 +1,42 @@
-{% extends 'base.html' %}
-{% block body %}
-<!-- Masthead
-================================================== -->
-<header class="jumbotron" id="overview">
-  <div class="row">
-    <div class="span6">
-      <h1>Polls+</h1>
-      <p class="lead">Vote free. Vote Now.</p>
-      
-    </div>
-  </div>
- <hr/>
-</header>
-<div class="row" >
-	<!--Render these only if the user is Logged in -->
-<div class="span8 pull-left" >
-	
-</div>
-</div>
+<html ng-app="PollPlus">
+	<head>
+		<link rel="stylesheet" href="/static/css/bootstrap.css" />
+		<link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="/static/css/bootswatch.css" />
+	</head>
+	<body>
+		<div class="container">
+			<nav class="pull-right">
+				<a href="#">Login with Google</a>
+			</nav>
+			<div class="row" style="margin-top:160px">
+				<div class="span12 offset1">
+					<div class="span6">
+					<img src="/static/img/6.jpg" />
+					</div>
+					<div class="card span4">
+						<div class="card-heading">
+							<h1>Poll+</h1>
+						</div>
+						<div ng-include src="'/static/tmpl/landingPage.html'">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<script src="/static/js/angular.min.js"></script>
+<script src="/static/js/alertify.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/js/controllers/CreatePollCtrl.js"></script>
+<script src="/static/js/controllers/PollDetailViewCtrl.js"></script>
+<script src="/static/js/controllers/PollsListCtrl.js"></script>
+<script src="/static/js/controllers/PollStatisticCtrl.js"></script>
+<script src="/static/js/controllers/PollsVotedCtrl.js"></script>
+<script src="/static/js/controllers/UserCreatedPollsCtrl.js"></script>
+<script src="/static/js/controllers/NavCtrl.js"></script>
 
-{% endblock body %}
-
-{% block script %}
-<script src="/static/js/bootstrap.min.js"></script>
-{% endblock script %}
-
-{% block footer%}
-<hr/>
-<div class="footer well well-large">
-	(c) Copyright 2013 Tropic Dreams Studio. All Rights Reserved. 
-</div>
-{% endblock footer%}
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+
+.team-item:hover,.link-to,.check_awesome:hover,.our-services:hover .button, .page-title,.skill-type:hover,.button:hover, .button:focus,.zoom-me,ul#filter > li.active, ul#filter > li:hover,ul#tags > li:hover,ul.pagination li.current a,.pricing-table:hover > .title,.my-accrodin.active > .accrodin-title,.top-bar-section>ul>li.hover>a,.current:hover{
+background-color:#ff0066; /* Background color here */
+}
+.current:hover{
+	background-color:#ff0066 !important;
+}
+.title-highlight,.highlight-me,.page-title:hover,#services > li > h1 .highlight,h1 .highlight,.pricing-table > .price, .pricing-table > .bullet-item:hover, ul.cat > li:hover a,.post > h1 a:hover,.post > small a,.readmore,.readmore:hover,.layer > p > span{
+color:#ff0066 !important; /* Same color as Background here */
+}
+.my-accrodin.active > .accrodin-title {
+border-top:#ff0066 3px solid !important; /* Same color as Background here */
+}
+.button{
+	border: 1px solid #ff0066;
+}
+
+footer{
+	border-top: #ff0066 5px solid;
+}
+
+.tab > section.active > .title, .tab > section > .title:hover{
+	border-top: 3px #ff0066 solid !important;
+}
