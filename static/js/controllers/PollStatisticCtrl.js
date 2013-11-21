@@ -29,7 +29,10 @@ function PollStatsController($scope, $routeParams, pollService) {
             $scope.pollStatistic.voteCount=0;
         }
         else{
+            
+            //process the statistics
        $scope.pollStatistic.voteCount=result; 
+       
        }
     });
     });
