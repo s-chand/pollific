@@ -7,7 +7,7 @@
 	<div class="row-fluid">
 		<div class="span7 pull-right">
 			<label for="type">Select an access type</label>
-		<select ng-model="type">
+		<select ng-model="type" required>
 			<option ng-repeat="type in pollTypes">{{type}}</option>
 		</select>
 		<br/><br/>
