@@ -7,6 +7,11 @@ from google.appengine.api import users
 
 class MainHandler(BaseHandler):
     def get(self):
+        user = users.get_current_user()
+        if user:
+            self.render_template('index.html')
+        else:
+            self.render_template('landing.html')
         # Insert useful code here
         self.render_template('index.html')
 
