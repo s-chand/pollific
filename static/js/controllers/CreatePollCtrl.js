@@ -6,7 +6,7 @@
  * Handles all the data gymnastics for the create poll view
  */
 
-function CreatePollController($scope, pollService) {
+function CreatePollController($scope, pollService,authService) {
     //{"desc": "This is the content of my first poll", "title": "First Poll", "id": 5275456790069248}
     //Poll details
     //Call service to get Poll ID
@@ -38,9 +38,13 @@ function CreatePollController($scope, pollService) {
         var title = $scope.title;
         var pollInfo = $scope.pollInfo;
         var poll = {};
-        poll.title = title;
+        var userData=authService.getLoggedInUser();
+        userData.success(function(result){
+            if(result.user_id && result.logout_url){
+                poll.ownerID=result.user_id;
+                poll.title = title;
         poll.description = pollInfo;
-        poll.ownerID = "samuelOkoroafor";
+        //poll.ownerID = "samuelOkoroafor";
         poll.contestants = conts;
         poll.type = $scope.type;
         poll.status = "published";
@@ -52,8 +56,12 @@ function CreatePollController($scope, pollService) {
             alertify.success("Poll Created Successfully!");
             sclass="alert alert-block alert-success";
             $scope.result = "";
+            console.log(output);
         $scope.result = 'Poll created successfully';
         });
+            }
+        })
+        
         
         //$scope.createResult.class="alert alert-success";
         $scope.clear();
