@@ -32,12 +32,14 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
                 person.information = value.information;
                 person.code = value.code;
                 person.name = value.name;
+                person.display = "vote";
                 person.photoUrl = value.photoUrl;
                 $scope.contestants.push(person);
                 if ($scope.poll.user_vote.user_voted === true) {
                     if ($scope.poll.user_vote.contestant_voted == value.contestant_id) {
                         person.class = "btn-danger";
                         person.disabled = true;
+                        person.display = "voted";
                     };
                 };
             });
@@ -58,6 +60,7 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
 
         var data = pollService.vote($scope.poll.poll_id, voteData);
         $scope.contestants[index].disabled = true;
+        $scope.contestants[index].display = "voted";
         data.success(function(result) {
             if (result.error) {
                 alertify.error("Oh snap! You cannot vote twice");
@@ -65,10 +68,13 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
             angular.forEach($scope.contestants, function(value) {
                 value.disabled = false;
                 value.class = "btn-success";
+                $scope.contestants[index].display = "vote";
             });
             
             $scope.contestants[index].class = "btn-danger";
             $scope.contestants[index].disabled = true;
+            $scope.contestants[index].display = "voted";
+            alertify.success("....voted");
         });
     };
 }
