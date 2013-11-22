@@ -1,5 +1,6 @@
-<div ng-controller="PollStatsController" class="span7">
-<div class="card">
-There are {{pollStatistic.voteCount}} votes in this poll
+<div ng-controller="PollStatsController">
+<div>
+<!-- Render Poll statistics chart-->
+        <highchart id="chart1" config="chart"></highchart>
 </div>
 </div>

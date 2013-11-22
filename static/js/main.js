@@ -2,54 +2,10 @@
  * Created by LRB on 10/28/13.
  */
 
-var pollplusModule = angular.module("PollPlus", [])
+var pollplusModule = angular.module("PollPlus", ["highcharts-ng"])
 
 var baseURL = "/api";
 
-var polls = [{
-	"id" : 1,
-	"title" : "Cloud Hackathon",
-	"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	"type" : "public",
-	"status" : "published",
-	"ownerID" : "098876654453678",
-	"voteCount" : 76,
-	"contestants" : [{
-		"name" : "Kola Jamay",
-		"information" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		"photoURL" : "/static/img/python.png",
-		"code" : "4"
-	}, {
-		"name" : "Ijaware Tom",
-		"information" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		"photoURL" : "/static/img/python.png",
-		"code" : "5"
-	}, {
-		"name" : "Tobay Tom",
-		"information" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-		"photoURL" : "/static/img/python.png",
-		"code" : "5"
-	}]
-}, {
-	"id" : 2,
-	"title" : "MTN GApps challenge",
-	"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	"type" : "public",
-	"status" : "published",
-	"ownerID" : "098876654453678",
-	"voteCount" : 86,
-	"contestants" : [{
-		"name" : "Okoro Tugbaski",
-		"information" : "Sharp guy",
-		"photoURL" : "/static/img/python.png",
-		"code" : "4"
-	}, {
-		"name" : "Babanriga",
-		"information" : "Badoo",
-		"photoURL" : "/static/img/python.png",
-		"code" : "5"
-	}]
-}];
 
 var pollData = [];
 //var deferred=$q.defer();

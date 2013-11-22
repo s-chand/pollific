@@ -791,54 +791,10 @@ a.provider({$anchorScroll:vc,$browser:xc,$cacheFactory:yc,$controller:Bc,$docume
  * Created by LRB on 10/28/13.
  */
 
-var pollplusModule = angular.module("PollPlus", [])
+var pollplusModule = angular.module("PollPlus", ["highcharts-ng"])
 
 var baseURL = "/api";
 
-var polls = [{
-	"id" : 1,
-	"title" : "Cloud Hackathon",
-	"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	"type" : "public",
-	"status" : "published",
-	"ownerID" : "098876654453678",
-	"voteCount" : 76,
-	"contestants" : [{
-		"name" : "Kola Jamay",
-		"information" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		"photoURL" : "/static/img/python.png",
-		"code" : "4"
-	}, {
-		"name" : "Ijaware Tom",
-		"information" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		"photoURL" : "/static/img/python.png",
-		"code" : "5"
-	}, {
-		"name" : "Tobay Tom",
-		"information" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-		"photoURL" : "/static/img/python.png",
-		"code" : "5"
-	}]
-}, {
-	"id" : 2,
-	"title" : "MTN GApps challenge",
-	"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	"type" : "public",
-	"status" : "published",
-	"ownerID" : "098876654453678",
-	"voteCount" : 86,
-	"contestants" : [{
-		"name" : "Okoro Tugbaski",
-		"information" : "Sharp guy",
-		"photoURL" : "/static/img/python.png",
-		"code" : "4"
-	}, {
-		"name" : "Babanriga",
-		"information" : "Badoo",
-		"photoURL" : "/static/img/python.png",
-		"code" : "5"
-	}]
-}];
 
 var pollData = [];
 //var deferred=$q.defer();
@@ -986,14 +942,11 @@ pollplusModule.factory('authService',function($http){
 });
 function LandingCtrl($scope,pollService,authService)
 {
-    //pass in the service to get the list of mock polls
-    //console.log(pollService.getUserId());
     var data=authService.getLoggedInUser();
     data.success(function(result){
         if(result.login_url && result.user_logged_in==false)
         {
             $scope.loginUrl=result.login_url;
-            console.log($scope.loginUrl);
         }
       
     });
@@ -1001,9 +954,7 @@ function LandingCtrl($scope,pollService,authService)
     var data = pollService.getPolls();
     data.success(function(d) {
         $scope.polls = d;
-        console.log("smokes");
     });
-    console.log(data);
 }
 function LogOutCtrl($scope,authService)
 {
