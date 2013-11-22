@@ -56,6 +56,7 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
             if (result.error) {
                 alertify.error("Oh snap! You cannot vote twice");
             }
+            else{
             angular.forEach($scope.contestants, function(value) {
                 value.disabled = false;
                 value.class = "btn-success";
@@ -63,6 +64,8 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
             
             $scope.contestants[index].class = "btn-danger";
             $scope.contestants[index].disabled = true;
+            alertify.success("Vote successful");
+            }
         });
     };
 }

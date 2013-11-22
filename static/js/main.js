@@ -197,14 +197,11 @@ pollplusModule.factory('authService',function($http){
 });
 function LandingCtrl($scope,pollService,authService)
 {
-    //pass in the service to get the list of mock polls
-    //console.log(pollService.getUserId());
     var data=authService.getLoggedInUser();
     data.success(function(result){
         if(result.login_url && result.user_logged_in==false)
         {
             $scope.loginUrl=result.login_url;
-            console.log($scope.loginUrl);
         }
       
     });
@@ -212,9 +209,7 @@ function LandingCtrl($scope,pollService,authService)
     var data = pollService.getPolls();
     data.success(function(d) {
         $scope.polls = d;
-        console.log("smokes");
     });
-    console.log(data);
 }
 function LogOutCtrl($scope,authService)
 {
