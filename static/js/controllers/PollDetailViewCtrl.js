@@ -34,6 +34,12 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
                 person.name = value.name;
                 person.photoUrl = value.photoUrl;
                 $scope.contestants.push(person);
+                if ($scope.poll.user_vote.user_voted === true) {
+                    if ($scope.poll.user_vote.contestant_voted == value.contestant_id) {
+                        person.class = "btn-danger";
+                        person.disabled = true;
+                    };
+                };
             });
         });
     });

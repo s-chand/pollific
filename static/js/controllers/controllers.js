@@ -113,6 +113,13 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
                 person.name = value.name;
                 person.photoUrl = value.photoUrl;
                 $scope.contestants.push(person);
+                console.log($scope.poll.user_vote.contestant_voted);
+                if ($scope.poll.user_vote.user_voted === true) {
+                    if ($scope.poll.user_vote.contestant_voted == value.contestant_id) {
+                        person.class = "btn-danger";
+                        person.disabled = true;
+                    };
+                };
             });
         });
     });
@@ -200,7 +207,10 @@ function PollStatsController($scope, $routeParams, pollService) {
             $scope.pollStatistic.voteCount=0;
         }
         else{
+            
+            //process the statistics
        $scope.pollStatistic.voteCount=result; 
+       
        }
     });
     });
