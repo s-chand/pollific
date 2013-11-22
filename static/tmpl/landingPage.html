@@ -1,0 +1,24 @@
+<div ng-controller="LandingCtrl" >
+    <div style="overflow:scroll;max-height:290px;overflow-x:hidden;overflow-y:auto;background-color:#E1E1E8">
+        <table class="table table-hover table-striped">
+            <tr ng-repeat='poll in polls | limitTo:1'>
+
+                <td><h3>{{poll.title}}</h3>
+                <p>
+                    {{poll.description}}
+                </p>
+                <br/>
+                <p>
+                    <a class="btn btn-warning" ng-href="#/poll/{{poll.poll_id}}">Stats</a>
+                </p></td>
+            </tr>
+        </table>
+    </div>
+    <div class="card">
+        <div class="card-actions">
+            <a class="btn btn-block btn-large btn-success" ng-href="{{loginUrl}}">Create Poll</a>
+        </div>
+        
+    </div>
+</div>
+<div class="g-person" data-width="370" data-href="//plus.google.com/103244551260750496913" data-layout="landscape" data-rel="author"></div>

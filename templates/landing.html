@@ -1,33 +1,55 @@
-{% extends 'base.html' %}
-{% block body %}
-<!-- Masthead
-================================================== -->
-<header class="jumbotron" id="overview">
-  <div class="row">
-    <div class="span6">
-      <h1>Polls+</h1>
-      <p class="lead">Vote free. Vote Now.</p>
-      
-    </div>
-  </div>
- <hr/>
-</header>
-<div class="row" >
-	<!--Render these only if the user is Logged in -->
-<div class="span8 pull-left" >
-	
-</div>
-</div>
-
-{% endblock body %}
-
-{% block script %}
-<script src="/static/js/bootstrap.min.js"></script>
-{% endblock script %}
-
-{% block footer%}
-<hr/>
-<div class="footer well well-large">
-	(c) Copyright 2013 Tropic Dreams Studio. All Rights Reserved. 
-</div>
-{% endblock footer%}
+<html ng-app="PollPlus">
+	<head>
+		<link rel="stylesheet" href="/static/css/bootstrap.css" />
+		<link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="/static/css/bootswatch.css" />
+		<script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+      </script>
+	</head>
+	<body style="background-image:url('/static/img/bgImage.jpg')">
+		<div class="container-fluid">
+			<div class="row" style="margin-top:160px">
+				
+				<div class="span11 offset2">
+					<div class="span6" ng-include src="'/static/tmpl/nav2.html'"></div>
+					<!--img src="/static/img/6.jpg" /-->
+					<div class="card span4">
+						<div class="card-heading" style="color:#F1F1F1">
+							<h3 style="color:#F1F1F1">Popular polls</h3>
+						</div>						
+						<div ng-include src="'/static/tmpl/landingPage.html'">
+							
+						</div>
+						
+				</div>
+				
+			</div>
+			
+			<div class="clearfix"></div>
+			<br/>
+		<br/>
+			<footer style="color:#F1F1F1" class="span10 offset2">
+			<div class="pull-left">(c) Tropic Dreams Studio 2013</div><div class="pull-right"> <img src="https://developers.google.com/appengine/images/appengine-noborder-120x30.gif" 
+alt="Powered by Google App Engine" /></div>
+			
+		</footer>
+			
+		</div>
+		
+		<script src="/static/js/angular.min.js"></script>
+<script src="/static/js/alertify.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/js/controllers/CreatePollCtrl.js"></script>
+<script src="/static/js/controllers/PollDetailViewCtrl.js"></script>
+<script src="/static/js/controllers/PollsListCtrl.js"></script>
+<script src="/static/js/controllers/PollStatisticCtrl.js"></script>
+<script src="/static/js/controllers/PollsVotedCtrl.js"></script>
+<script src="/static/js/controllers/UserCreatedPollsCtrl.js"></script>
+<script src="/static/js/controllers/NavCtrl.js"></script>
+	</body>
+</html>
