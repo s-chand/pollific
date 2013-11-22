@@ -58,9 +58,9 @@ def getPolls(user = None):
 
 #this retrieves full details of a poll whose id is supplied
 def getPollDetails(poll_id):
-    user= users.get_current_user()
-    user_id = user.user_id()
     try:
+        user = users.get_current_user()
+        user_id = user.user_id()
         poll = Poll.get_by_id(poll_id)
         if poll is not None:
             result = {
@@ -79,6 +79,10 @@ def getPollDetails(poll_id):
 
     except LookupError as e:
         result = {"error": "There has been an error %s"%e }
+
+    except AttributeError as e:
+        result = {"error": "There is no logged in user. Kindly ensure the user is logged in before retrying"}
+
 
     return result
 
@@ -254,6 +258,7 @@ def getUserVoteInPoll(user_id, poll_id):
     if vote:
         #just the first matching guy
         result = {"contestant_voted": vote[0].contestant}
+        return result
     else:
         return {"error": "User has not voted in the specified poll"}
 
