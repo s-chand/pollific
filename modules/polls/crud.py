@@ -176,7 +176,7 @@ def getVotesInPoll(poll_id):
             for key, val in summary.items():
                 poll_results.append({"contestant_id": key, "votes": val})
 
-            poll_votes = {"poll_id": poll_id, "poll_results": poll_results}
+            poll_votes = {"poll_id": poll_id, "poll_results": poll_results, "poll_count": len(poll_results)}
             return poll_votes
 
         else:
@@ -241,10 +241,10 @@ def getPollsUserVoted(user_id):
         user_polls = list()
         if votes:
             for vote in votes:
-                poll_vote = Poll.get_by_id(vote.poll)
-                user_polls.append({"poll_id": poll_vote.key.id(), "title": poll_vote.title, "description": poll_vote.description})
+                poll_vote = Poll.get_by_id(int(vote.poll))
+                user_polls.append({"poll_id": poll_vote.key.id(), "title": poll_vote.title, "description": poll_vote.description, "user_vote": getUserVoteInPoll(user_id, poll_vote.key.id()) })
 
-            return {"user_id": user_id, "user_polls": user_polls}
+            return {"user_id": user_id, "voted_polls": user_polls}
 
         else:
             return {"error": "No Polls have been created by user yet"}
@@ -252,13 +252,15 @@ def getPollsUserVoted(user_id):
      except LookupError as e:
         return {"error": "There has been an error: %s"%e}
 
+     except AttributeError as e:
+          return {"error": "There has been an error: %s"%e}
 
 def getUserVoteInPoll(user_id, poll_id):
     vote = Vote.query(Vote.voter==user_id, Vote.poll==str(poll_id)).fetch()
     if vote:
         #just the first matching guy
-        result = {"contestant_voted": vote[0].contestant}
+        result = {"user_voted": True, "contestant_voted": vote[0].contestant}
         return result
     else:
-        return {"error": "User has not voted in the specified poll"}
+        return {"user_voted": False}
 

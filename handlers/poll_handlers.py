@@ -75,3 +75,12 @@ class ContestantHandler(ApiHandler):
 
     def post(self):
         self.render_object({}, 405)
+
+
+class PollsUserVotedHandler(ApiHandler):
+    def get(self, user_id):
+        result = crud.getPollsUserVoted(user_id)
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({},405)

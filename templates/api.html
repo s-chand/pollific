@@ -102,6 +102,7 @@
             <td>GETs the votes for a particular poll</td>
             <td>The poll id for which votes should be gotten</td>
             <td>{
+                    "poll_count": 45
                     "poll_results": {
                         "5066549580791808": 1
                     },
@@ -118,6 +119,26 @@
             <td>{"user_polls": [{"description": "desc", "poll_id": 4785074604081152, "title": "title"},
                 {"description": "desc", "poll_id": 5629499534213120, "title": "title"}],
                 "user_id": "ownerID"}
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/user/747674926864657/</td>
+        </tr>
+        <tr>
+            <td>/api/polls/user/voted/user_id</td>
+            <td>GET</td>
+            <td>GETs the polls in which a user has voted</td>
+            <td>The user id for which polls voted in should be gotten</td>
+            <td>{
+        "voted_polls": [
+        { "user_vote": { "contestant_voted": "6192449487634432",
+                "user_voted": true
+            },
+            "description": "Who is better?",
+            "poll_id": 5629499534213120,
+            "title": "Wizkid vs Olamide"
+        }
+    ],
+    "user_id": "185804764220139124118"
+}
             </td>
             <td>http://poll-plus.appspot.com/api/polls/user/747674926864657/</td>
         </tr>
