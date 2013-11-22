@@ -36,6 +36,8 @@ _routes = [
         RedirectRoute('/contestants/<contestant_id:\d+>', handler = 'handlers.poll_handlers.ContestantHandler', name = 'contestants_uri'),
         #GETs the polls created by a particular user
         RedirectRoute('/polls/user/<user_id>', handler = 'handlers.poll_handlers.UserPollsHandler', name = 'vote_uri'),
+         #GETs the polls created by a particular user
+        RedirectRoute('/polls/user/voted/<user_id>', handler = 'handlers.poll_handlers.PollsUserVotedHandler', name = 'vote_uri'),
         #GETs the details for the currently logged in user
         RedirectRoute('/users/current_user', handler = 'handlers.index.UserHandler', name = 'vote_uri'),
 
