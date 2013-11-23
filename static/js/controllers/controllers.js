@@ -96,7 +96,7 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
     $scope.contestants = [];
     var userData = authService.getLoggedInUser();
     userData.success(function(result) {
-        $scope.user_id = result.user_id;
+        $scope.user_id =result.user_id;
     });
     var data = pollService.getPollById($routeParams.id);
     data.success(function(d) {
@@ -143,17 +143,8 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
         data.success(function(result) {
             if (result.error) {
                 alertify.error("Oh snap! You cannot vote twice");
-            } else {
-                angular.forEach($scope.contestants, function(value) {
-                    value.disabled = false;
-                    value.class = "btn-success";
-                });
-
-                $scope.contestants[index].class = "btn-danger";
-                $scope.contestants[index].disabled = true;
-                alertify.success("Vote successful");
             }
-
+            else{
             angular.forEach($scope.contestants, function(value) {
                 value.disabled = false;
                 value.class = "btn-success";
@@ -162,18 +153,20 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
             
             $scope.contestants[index].class = "btn-danger";
             $scope.contestants[index].disabled = true;
+
             $scope.contestants[index].display = "voted";
             alertify.success("....voted");
-        });
-    };
-}
+
+        }});
+        }
+        }
 
 /**
  * @author Samuel Okoroafor
- *
+ * 
  * PollsList class
- *
- *
+ * 
+ * 
  * Responsible for the rendering and display of the timeline for polls
  */
 //the poll list Controller
@@ -186,6 +179,7 @@ function PollListController($scope, pollService) {
         $scope.polls = d;
     });
 }
+
 
 /**
  * @author Samuel Okoroafor
@@ -213,34 +207,6 @@ function PollStatsController($scope, $routeParams, pollService) {
         pollResult.type = poll.type;
         pollResult.status = poll.status;
         pollResult.id = poll.poll_id;
-
-    var data = pollService.getPolls();
-    data.success(function(pollss){
- 
-    console.log(pollss);
-    var pollStat = {};
-    for (var i = 0; i < pollss.length; i++) {
-        if (pollss[i].poll_id == $routeParams.id) {
-            console.log(pollss);
-            pollStat = pollss[i];
-        }
-        $scope.pollStatistic = pollStat;
-        $scope.pollId=pollStat.poll_id;
-        console.log($scope.pollId);
-    }
-    var data2=pollService.getVotes($scope.pollId);
-    data2.success(function(result){
-        if(result.error)
-        {
-            $scope.pollStatistic.voteCount=0;
-        }
-        else{
-            
-            //process the statistics
-       $scope.pollStatistic.voteCount=result; 
-       
-       }
-
     });
 
     //query for this poll's statistic
@@ -308,24 +274,23 @@ function PollStatsController($scope, $routeParams, pollService) {
 
     });
 }
-
 /**
  * @author Samuel Okoroafor
- *
+ * 
  * PollsVotedController class
  */
+
 
 function PollsVotedController($scope, pollService) {
     var data = pollService.getPolls();
     data.success(function(d) {
         $scope.polls = d;
-
+        
     });
 }
-
 /**
  * @author Samuel Okoroafor
- *
+ * 
  * PollsCreated controller class
  */
 
@@ -336,7 +301,6 @@ function CreatedPollsController($scope, pollService) {
     });
 }
 
-
-angular.module("PollPlus").controller('NavCtrl', function($scope) {
-    $scope.usn = "Samuel Okoroafor";
+angular.module("PollPlus").controller('NavCtrl',function($scope){
+    $scope.usn="Samuel Okoroafor";
 });
