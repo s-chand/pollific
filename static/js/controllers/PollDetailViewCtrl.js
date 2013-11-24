@@ -78,7 +78,8 @@ function PollDetailController($scope, $routeParams, pollService, authService) {
             $scope.contestants[index].display = "voted";
             alertify.success("....voted");
 
-        });
-    };
+        }
+    });
+}
 }
 
