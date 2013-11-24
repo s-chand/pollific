@@ -27,3 +27,4 @@ class Vote(ndb.Model):
     contestant = ndb.StringProperty()
     voter =ndb.StringProperty()
     value = ndb.StringProperty()
+    date_added = ndb.DateProperty(auto_now_add=True)

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="172acebe-20d2-489e-85cb-bdbf1045d1c2" name="Default" comment="" />
+    <list default="true" id="172acebe-20d2-489e-85cb-bdbf1045d1c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/api.html" afterPath="$PROJECT_DIR$/templates/api.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/polls/crud.py" afterPath="$PROJECT_DIR$/modules/polls/crud.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/index.py" afterPath="$PROJECT_DIR$/handlers/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/poll.py" afterPath="$PROJECT_DIR$/models/poll.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="pollific.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385272045129" ignored="false" />
@@ -76,7 +83,7 @@
       <file leaf-file-name="routes.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="28" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.0">
+            <state line="42" column="28" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,7 +92,7 @@
       <file leaf-file-name="poll.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/poll.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="4" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+            <state line="26" column="4" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,7 +110,7 @@
       <file leaf-file-name="crud.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="107" selection-start="6726" selection-end="6726" vertical-scroll-proportion="0.0">
+            <state line="181" column="103" selection-start="6845" selection-end="6845" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +128,7 @@
       <file leaf-file-name="api.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/api.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="20" selection-start="5889" selection-end="5889" vertical-scroll-proportion="-0.65384614">
+            <state line="117" column="20" selection-start="6336" selection-end="6336" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
@@ -130,7 +137,7 @@
       <file leaf-file-name="index.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handlers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="2" selection-start="660" selection-end="660" vertical-scroll-proportion="0.8742857">
+            <state line="35" column="20" selection-start="919" selection-end="919" vertical-scroll-proportion="0.8704819">
               <folding>
                 <element signature="e#22#59#0" expanded="true" />
               </folding>
@@ -464,10 +471,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4121212" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4121212" sideWeight="0.6700855" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -590,7 +597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/poll.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+        <state line="26" column="4" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -604,7 +611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="28" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.0">
+        <state line="42" column="28" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -625,21 +632,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="107" selection-start="6726" selection-end="6726" vertical-scroll-proportion="0.0">
+        <state line="181" column="103" selection-start="6845" selection-end="6845" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/api.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="20" selection-start="5889" selection-end="5889" vertical-scroll-proportion="-0.65384614">
+        <state line="117" column="20" selection-start="6336" selection-end="6336" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="2" selection-start="660" selection-end="660" vertical-scroll-proportion="0.8742857">
+        <state line="35" column="20" selection-start="919" selection-end="919" vertical-scroll-proportion="0.8704819">
           <folding>
             <element signature="e#22#59#0" expanded="true" />
           </folding>

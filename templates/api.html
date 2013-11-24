@@ -102,12 +102,14 @@
             <td>GETs the votes for a particular poll</td>
             <td>The poll id for which votes should be gotten</td>
             <td>{
-                    "poll_count": 45
-                    "poll_results": {
-                        "5066549580791808": 1
-                    },
-                    "poll_id": "4785074604081152"
-                }
+                "poll_results": [
+                    {
+                        "contestant_id": "6192449487634432",
+                        "votes": 1
+                    }
+                ],
+                "votes_count": 1,
+                "poll_id": "5629499534213120" }
             </td>
             <td>http://poll-plus.appspot.com/api/polls/747674926864657/votes</td>
         </tr>
@@ -154,6 +156,17 @@
                        "logout_url": "http://hehufghggygygrhrbh"}
             </td>
             <td>http://poll-plus.appspot.com/api/users/current_user/</td>
+        </tr>
+        <tr>
+            <td>/api/urls</td>
+            <td>GET</td>
+            <td>GETs the login url for a given page that requires auth so the user can be properly redirected</td>
+            <td>{"url" : the target URL for which a login url shld be generated}</td>
+            <td>
+                { "login_url": "http://wellyouheardme.com",
+                 }
+            </td>
+            <td>http://poll-plus.appspot.com/api/urls</td>
         </tr>
 
     </tbody>

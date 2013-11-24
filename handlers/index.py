@@ -6,12 +6,20 @@ import json
 from google.appengine.api import users
 import cgi
 
+def replace(s, old_C, new_C):
+        if isinstance(s, str):
+            s.replace(old_C, new_C)
+
+        return s
+
 class MainHandler(BaseHandler):
     def get(self):
         user = users.get_current_user()
+       # dest_url = replace(str(self.request.uri), "#" , "%23")
         if user:
             self.render_template('index.html')
         else:
+          #  self.redirect(users.create_login_url(dest_url))
             self.render_template('landing.html')
 
 
@@ -31,6 +39,15 @@ class ApiHandler(BaseHandler):
         self.response.set_status(response_code)
         self.response.write(json.dumps(result))
 
+
+class URLRedirectHandler(ApiHandler):
+    def get(self):
+        url = self.request.get('url')
+        dest_url = users.create_login_url(url)
+        self.render_object({"login_url": dest_url}, 200)
+
+    def post(self):
+        self.render_object({},405)
 
 class UserHandler(ApiHandler):
     def get(self):
