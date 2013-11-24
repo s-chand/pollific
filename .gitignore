@@ -38,3 +38,6 @@ dist
 
 # compiled python files
 *.pyc
+
+#Worksapce xml files
+.idea
