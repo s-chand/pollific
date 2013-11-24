@@ -119,11 +119,12 @@ def vote(voter, contestant, poll, value):
                     vote = Vote(contestant=contestant, poll=poll, voter=voter, value=value)
                     key = vote.put()
                     vote_id = str(key.id())
-                    result            = {
+                    result = {
                     "vote_id": vote_id,
                     "poll_id": vote.poll,
                     "contestant_id": vote.contestant,
-                    "value": vote.value }
+                    "value": vote.value,
+                    "date_added": vote.date_added.strftime('%m/%d/%Y')}
                     return result
 
                 except ValueError as e:
@@ -169,14 +170,16 @@ def getVotesInPoll(poll_id):
         if votes: #i.e there have been votes cast in this poll
             poll_results = list()
             contestants = list()
+            total_votes = 0
             for vote in votes:
                 contestants.append(vote.contestant)
 
             summary  = Counter(contestants)
             for key, val in summary.items():
                 poll_results.append({"contestant_id": key, "votes": val})
+                total_votes += val
 
-            poll_votes = {"poll_id": poll_id, "poll_results": poll_results, "poll_count": len(poll_results)}
+            poll_votes = {"poll_id": poll_id, "poll_results": poll_results, "votes_count": total_votes}
             return poll_votes
 
         else:
