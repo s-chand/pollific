@@ -890,25 +890,17 @@ pollplusModule.factory('pollService', function($http) {
             return $http.post(url,data);
         }, 
 		//User related service functions
-		getUserId : function() {
-			var url = '/';
-			$http.get(url).success(function(data) {
-				console.log("SUCCESS: " + data);
-				return data;
-
-			}).error(function(data) {
-				console.log("ERROR: " + data);
-			})
-		},
-		getLoggedInUser:function(){
-		    
-		},
-		isUserLoggedIn:function(){
-		    
-		},
 		getVotes:function(pollId)
 		{
 		    var url=baseURL+'/polls/'+pollId+'/votes';
+		    return $http.get(url);
+		},
+		getUserCreatedPolls: function(userId){
+		    var url=baseURL+'/polls/user/'+userId;
+		    return $http.get(url);
+		},
+		getPollsVotedIn: function(userId){
+		    var url=baseURL+'/polls/user/voted/'+userId;
 		    return $http.get(url);
 		}
 	}
@@ -916,26 +908,8 @@ pollplusModule.factory('pollService', function($http) {
 pollplusModule.factory('authService',function($http){
     //User related service functions
     return{
-        getUserId : function() {
-            var url = '/';
-            $http.get(url).success(function(data) {
-                console.log("SUCCESS: " + data);
-                return data;
-
-            }).error(function(data) {
-                console.log("ERROR: " + data);
-            })
-        },
         getLoggedInUser:function(){
             var url=baseURL+'/users/current_user';
-            return $http.get(url);
-        },
-        isUserLoggedIn:function(){
-            
-        },
-        getVotes:function(pollId)
-        {
-            var url=baseURL+'/polls/'+pollId+'/votes';
             return $http.get(url);
         }
         };
