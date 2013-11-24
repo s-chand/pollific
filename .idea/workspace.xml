@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="172acebe-20d2-489e-85cb-bdbf1045d1c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/api.html" afterPath="$PROJECT_DIR$/templates/api.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/polls/crud.py" afterPath="$PROJECT_DIR$/modules/polls/crud.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/poll_handlers.py" afterPath="$PROJECT_DIR$/handlers/poll_handlers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/index.py" afterPath="$PROJECT_DIR$/handlers/index.py" />
     </list>
     <ignored path="pollific.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385109647846" ignored="false" />
+    <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385272045129" ignored="false" />
     <file path="/vote_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384989526428" ignored="false" />
     <file path="/base.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383578726390" ignored="false" />
     <file path="/index.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383978717329" ignored="false" />
     <file path="/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980696907" ignored="false" />
-    <file path="/index.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385040481778" ignored="false" />
+    <file path="/index.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385272641057" ignored="false" />
     <file path="/poll_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385111446448" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/statics/js/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980697979" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/logic/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980857308" ignored="false" />
@@ -56,21 +52,7 @@
         <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="85" column="33" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#159#1123#0" expanded="false" />
-                <element signature="e#182#255#0" expanded="false" />
-                <element signature="e#285#1123#0" expanded="false" />
-                <element signature="e#1161#1351#0" expanded="false" />
-                <element signature="e#1193#1294#0" expanded="false" />
-                <element signature="e#1324#1351#0" expanded="false" />
-                <element signature="e#1394#1560#0" expanded="false" />
-                <element signature="e#1426#1503#0" expanded="false" />
-                <element signature="e#1533#1560#0" expanded="false" />
-                <element signature="e#1605#1866#0" expanded="false" />
-                <element signature="e#1637#1810#0" expanded="false" />
-                <element signature="e#1840#1866#0" expanded="false" />
-                <element signature="e#1947#2041#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,20 +106,7 @@
         <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="178" column="107" selection-start="6726" selection-end="6726" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#310#995#0" expanded="false" />
-                <element signature="e#1148#1545#0" expanded="false" />
-                <element signature="e#1656#1974#0" expanded="false" />
-                <element signature="e#2069#2949#0" expanded="false" />
-                <element signature="e#3038#3621#0" expanded="false" />
-                <element signature="e#3704#5434#0" expanded="false" />
-                <element signature="e#5540#6018#0" expanded="false" />
-                <element signature="e#7009#7566#0" expanded="false" />
-                <element signature="e#7663#7957#0" expanded="false" />
-                <element signature="e#7993#8491#0" expanded="false" />
-                <element signature="e#8530#9258#0" expanded="false" />
-                <element signature="e#9305#9573#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,35 +120,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="api.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/api.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="20" selection-start="5889" selection-end="5889" vertical-scroll-proportion="0.6786427">
-              <folding>
-                <element signature="tag#thead#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#1;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#td#4;tag#tr#1;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#3;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#td#4;tag#tr#3;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#4;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#td#4;tag#tr#4;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#5;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#6;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#td#3;tag#tr#6;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#8;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#td#4;tag#tr#8;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#tr#10;tag#tbody#0;tag#table#0" expanded="false" />
-                <element signature="tag#td#4;tag#tr#10;tag#tbody#0;tag#table#0" expanded="false" />
-              </folding>
+            <state line="104" column="20" selection-start="5889" selection-end="5889" vertical-scroll-proportion="-0.65384614">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handlers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="66" selection-start="1483" selection-end="1483" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="14" column="12" selection-start="334" selection-end="334" vertical-scroll-proportion="0.4516129">
+              <folding>
+                <element signature="e#22#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,11 +165,11 @@
         <option value="$PROJECT_DIR$/models/poll.py" />
         <option value="$PROJECT_DIR$/handlers/vote_handlers.py" />
         <option value="$PROJECT_DIR$/app.yaml" />
-        <option value="$PROJECT_DIR$/handlers/index.py" />
         <option value="$PROJECT_DIR$/routes.py" />
         <option value="$PROJECT_DIR$/handlers/poll_handlers.py" />
         <option value="$PROJECT_DIR$/templates/api.html" />
         <option value="$PROJECT_DIR$/modules/polls/crud.py" />
+        <option value="$PROJECT_DIR$/handlers/index.py" />
       </list>
     </option>
   </component>
@@ -249,7 +205,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,13 +303,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../textsearch" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -372,22 +328,6 @@
     </key>
   </component>
   <component name="RunManager" selected="App Engine server.pollific">
-    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pollific" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="browserUrl" value="" />
-      <option name="additionalOptions" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -408,6 +348,22 @@
       <option name="USE_PATTERN" value="false" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pollific" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="browserUrl" value="" />
+      <option name="additionalOptions" value="" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -503,14 +459,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40530303" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4121212" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -617,9 +573,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/queue.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
@@ -639,13 +593,6 @@
     <entry file="file://$PROJECT_DIR$/models/poll.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="4" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="66" selection-start="1483" selection-end="1483" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -674,62 +621,29 @@
     <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="33" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#159#1123#0" expanded="false" />
-            <element signature="e#182#255#0" expanded="false" />
-            <element signature="e#285#1123#0" expanded="false" />
-            <element signature="e#1161#1351#0" expanded="false" />
-            <element signature="e#1193#1294#0" expanded="false" />
-            <element signature="e#1324#1351#0" expanded="false" />
-            <element signature="e#1394#1560#0" expanded="false" />
-            <element signature="e#1426#1503#0" expanded="false" />
-            <element signature="e#1533#1560#0" expanded="false" />
-            <element signature="e#1605#1866#0" expanded="false" />
-            <element signature="e#1637#1810#0" expanded="false" />
-            <element signature="e#1840#1866#0" expanded="false" />
-            <element signature="e#1947#2041#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="178" column="107" selection-start="6726" selection-end="6726" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#310#995#0" expanded="false" />
-            <element signature="e#1148#1545#0" expanded="false" />
-            <element signature="e#1656#1974#0" expanded="false" />
-            <element signature="e#2069#2949#0" expanded="false" />
-            <element signature="e#3038#3621#0" expanded="false" />
-            <element signature="e#3704#5434#0" expanded="false" />
-            <element signature="e#5540#6018#0" expanded="false" />
-            <element signature="e#7009#7566#0" expanded="false" />
-            <element signature="e#7663#7957#0" expanded="false" />
-            <element signature="e#7993#8491#0" expanded="false" />
-            <element signature="e#8530#9258#0" expanded="false" />
-            <element signature="e#9305#9573#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/api.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="20" selection-start="5889" selection-end="5889" vertical-scroll-proportion="0.6786427">
+        <state line="104" column="20" selection-start="5889" selection-end="5889" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="12" selection-start="334" selection-end="334" vertical-scroll-proportion="0.4516129">
           <folding>
-            <element signature="tag#thead#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#1;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#td#4;tag#tr#1;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#3;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#td#4;tag#tr#3;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#4;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#td#4;tag#tr#4;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#5;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#6;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#td#3;tag#tr#6;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#8;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#td#4;tag#tr#8;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#tr#10;tag#tbody#0;tag#table#0" expanded="false" />
-            <element signature="tag#td#4;tag#tr#10;tag#tbody#0;tag#table#0" expanded="false" />
+            <element signature="e#22#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

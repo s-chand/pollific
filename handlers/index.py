@@ -4,6 +4,7 @@ import webapp2
 import logging
 import json
 from google.appengine.api import users
+import cgi
 
 class MainHandler(BaseHandler):
     def get(self):
@@ -43,7 +44,7 @@ class UserHandler(ApiHandler):
         else:
             result = {
                 "user_logged_in": False,
-                "login_url": users.create_login_url('/#/createPoll')
+                "login_url": users.create_login_url('/#/')
             }
 
         self.render_object(result, 200)
