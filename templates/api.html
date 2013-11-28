@@ -145,6 +145,41 @@
             <td>http://poll-plus.appspot.com/api/polls/user/747674926864657/</td>
         </tr>
         <tr>
+            <td>/api/polls/poll_id/comments</td>
+            <td>GET</td>
+            <td>GETs the comments in the poll whose ID is specified </td>
+            <td>The poll_id for which comments should be retrieved</td>
+            <td>{"poll_id": poll_id, "comments":
+                [{"comment_id": 87847787754, "comment": "Wizkid is a clown", "user_id": "37467675656523",
+                                     "date_posted": "16/12/13"}]
+                }
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments</td>
+        </tr>
+        <tr>
+            <td>/api/polls/comment</td>
+            <td>POST</td>
+            <td>POSTs the comments in the poll whose ID is specified </td>
+            <td>the comment details in json format </td>
+            <td>{"user_id": "8597879747", "poll_id": "67376767476", "comment": "Ok, you just posted a comment", "comment_id": "93027786468"}
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments</td>
+        </tr>
+        <tr>
+            <td>/api/polls/poll_id/user/user_id/comments</td>
+            <td>GET</td>
+            <td>GETs the comments of the user_id in the poll whose ID is specified </td>
+            <td>The user_id and poll_id for which comments should be retrieved</td>
+            <td>{"poll_id": 93487826747, "user_id": 389748787873, "comments":
+                [{"comment_id": 87847787754, "comment": "Wizkid is a clown", "user_id": "37467675656523",
+                                     "date_posted": "16/12/13"},
+                {"comment_id": 3879393986, "comment": "Olamide is just soooooo annoying", "user_id": "37467675656523",
+                                     "date_posted": "16/12/13"}]
+                }
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/user/02877673653/comments</td>
+        </tr>
+        <tr>
             <td>/api/users/current_user</td>
             <td>GET</td>
             <td>GETs the details of the currently logged in user if there is, else returns a boolean to that effect</td>

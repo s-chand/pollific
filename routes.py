@@ -40,8 +40,12 @@ _routes = [
         RedirectRoute('/polls/user/voted/<user_id>', handler = 'handlers.poll_handlers.PollsUserVotedHandler', name = 'vote_uri'),
         #GETs the details for the currently logged in user URLRedirectHandler
         RedirectRoute('/users/current_user', handler = 'handlers.index.UserHandler', name = 'vote_uri'),
-        #GETs the details for the currently logged in user URLRedirectHandler
-        RedirectRoute('/urls', handler = 'handlers.index.URLRedirectHandler', name = 'vote_uri'),
+        #POSTs a comment to the supplied poll
+        RedirectRoute('/polls/comment', handler = 'handlers.poll_handlers.URLRedirectHandler', name = 'vote_uri'),
+        #GETs the comments that have been made to the supplied poll
+        RedirectRoute('/polls/<poll_id:\d+>/comments', handler = 'handlers.poll_handlers.URLRedirectHandler', name = 'vote_uri'),
+        #GETs the comments that a specific user have been made to the supplied poll
+        RedirectRoute('/polls/<poll_id:\d+>/user/<user_id:\d+>/comments', handler = 'handlers.poll_handlers.URLRedirectHandler', name = 'vote_uri'),
     ]),
     PathPrefixRoute('/u',[
         RedirectRoute('/login', handler = 'handlers.user.LoginUserHandler', name = 'login_uri', strict_slash = True),

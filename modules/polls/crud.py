@@ -2,7 +2,7 @@ import logging
 __author__ = 'Tomiwa Ijaware'
 
 __modified_by__ = 'Adekola Adebayo'
-from models.poll import Poll, Vote, Contestant
+from models.poll import Poll, Vote, Contestant, Comment
 from google.appengine.ext import ndb
 from collections import Counter
 from google.appengine.api import users
@@ -266,4 +266,48 @@ def getUserVoteInPoll(user_id, poll_id):
         return result
     else:
         return {"user_voted": False}
+
+def addComment(user_id, poll_id, comment):
+    try:
+        com = Comment(user_id=user_id, poll_id=poll_id, comment=comment)
+        id = com.put().id()
+        result = {"user_id": user_id, "poll_id": poll_id, "comment": comment, "comment_id": id}
+        return result
+    except KeyError as e:
+        return {"error": "There has been and error :%s"%e}
+
+def getCommentsForPoll(poll_id):
+    try:
+        comments_query = Comment.query(Comment.poll==poll_id).fetch()
+        comment_list = list()
+        if comments_query:
+            for com in comments_query:
+                comment_list.append({"comment_id": com.poll, "comment": com.comment, "user_id": com.user_id,
+                                     "date_posted": com.date_added.strftime('%m/%d/%Y')})
+
+
+        return {"poll_id": poll_id, "comments": comment_list}
+    except KeyError as e:
+        return {"error": "There has been an error"}
+
+def getUserCommentInPoll(poll_id, user_id):
+    try:
+        comment_query = Comment.query(Comment.user_id==user_id, Comment.poll==poll_id).fetch()
+        comments = list()
+        if comment_query:
+            for comment in comment_query:
+                comments.append({"comment_id": comment.poll, "comment": comment.comment,
+                                     "date_posted": comment.date_added.strftime('%m/%d/%Y')})
+
+            return {"user_id": user_id, "poll_id": poll_id, "user_comments": comments}
+
+    except LookupError as e:
+        return {"error": "There has been an error"}
+
+
+
+
+
+
+
 
