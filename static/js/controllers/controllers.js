@@ -281,12 +281,20 @@ function PollStatsController($scope, $routeParams, pollService) {
  */
 
 
-function PollsVotedController($scope, pollService) {
-    var data = pollService.getPolls();
-    data.success(function(d) {
-        $scope.polls = d;
+function PollsVotedController($scope, pollService,authService) {
+    var userPromise=authService.getLoggedInUser();
+    userPromise.success(function(user){
+        if(user.user_id)
+        {
+            var pollsPromise = pollService.getPollsVotedIn(user.user_id);
+    pollsPromise.success(function(poll) {
+        $scope.polls = poll.voted_polls;
+        //get the contestant details
         
     });
+        }
+    })
+    
 }
 /**
  * @author Samuel Okoroafor
@@ -294,11 +302,21 @@ function PollsVotedController($scope, pollService) {
  * PollsCreated controller class
  */
 
-function CreatedPollsController($scope, pollService) {
-    var data = pollService.getPolls();
-    data.success(function(d) {
-        $scope.polls = d;
+function CreatedPollsController($scope, pollService,authService) {
+    var userPromise=authService.getLoggedInUser();
+    userPromise.success(function(user){
+        if(user.user_id){
+        var pollsPromise = pollService.getUserCreatedPolls(user.user_id);
+        pollsPromise.success(function(polls) {
+        if(polls.user_polls)
+        {
+            $scope.polls=polls.user_polls;
+        }
     });
+        }
+     
+    });
+   
 }
 
 angular.module("PollPlus").controller('NavCtrl',function($scope){
