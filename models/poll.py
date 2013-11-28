@@ -30,7 +30,7 @@ class Vote(ndb.Model):
     date_added = ndb.DateProperty(auto_now_add=True)
 
 class Comment(ndb.Model):
-    poll = ndb.StringProperty()
+    poll_id = ndb.StringProperty()
     user_id = ndb.StringProperty()
     comment = ndb.StringProperty()
     date_added = ndb.DateProperty(auto_now_add=True)

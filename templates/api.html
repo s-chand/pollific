@@ -145,18 +145,6 @@
             <td>http://poll-plus.appspot.com/api/polls/user/747674926864657/</td>
         </tr>
         <tr>
-            <td>/api/polls/poll_id/comments</td>
-            <td>GET</td>
-            <td>GETs the comments in the poll whose ID is specified </td>
-            <td>The poll_id for which comments should be retrieved</td>
-            <td>{"poll_id": poll_id, "comments":
-                [{"comment_id": 87847787754, "comment": "Wizkid is a clown", "user_id": "37467675656523",
-                                     "date_posted": "16/12/13"}]
-                }
-            </td>
-            <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments</td>
-        </tr>
-        <tr>
             <td>/api/polls/comment</td>
             <td>POST</td>
             <td>POSTs the comments in the poll whose ID is specified </td>
@@ -166,18 +154,36 @@
             <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments</td>
         </tr>
         <tr>
-            <td>/api/polls/poll_id/user/user_id/comments</td>
+            <td>/api/polls/poll_id/comments</td>
             <td>GET</td>
             <td>GETs the comments of the user_id in the poll whose ID is specified </td>
-            <td>The user_id and poll_id for which comments should be retrieved</td>
-            <td>{"poll_id": 93487826747, "user_id": 389748787873, "comments":
-                [{"comment_id": 87847787754, "comment": "Wizkid is a clown", "user_id": "37467675656523",
-                                     "date_posted": "16/12/13"},
-                {"comment_id": 3879393986, "comment": "Olamide is just soooooo annoying", "user_id": "37467675656523",
-                                     "date_posted": "16/12/13"}]
-                }
+            <td>The  poll_id and an optional user_id query string parameter for which comments should be retrieved</td>
+            <td>{
+             "comments": [
+        {
+            "comment": "Wizkid is a biggy",
+            "comment_id": "5629499534213120",
+            "user_id": "185804764220139124118",
+            "date_posted": "11/28/2013"
+        }
+    ],
+    "poll_id": "5629499534213120"
+}
+
+                OR
+                {
+    "user_id": "185804764220139124118",
+    "poll_id": "5629499534213120",
+    "user_comments": [
+        {
+            "comment": "Wizkid is a biggy",
+            "comment_id": "5629499534213120",
+            "date_posted": "11/28/2013"
+        }
+    ]
+} if user id is supplied
             </td>
-            <td>http://poll-plus.appspot.com/api/polls/747674926864657/user/02877673653/comments</td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments?user_id=394883668368937782</td>
         </tr>
         <tr>
             <td>/api/users/current_user</td>
@@ -192,18 +198,6 @@
             </td>
             <td>http://poll-plus.appspot.com/api/users/current_user/</td>
         </tr>
-        <tr>
-            <td>/api/urls</td>
-            <td>GET</td>
-            <td>GETs the login url for a given page that requires auth so the user can be properly redirected</td>
-            <td>{"url" : the target URL for which a login url shld be generated}</td>
-            <td>
-                { "login_url": "http://wellyouheardme.com",
-                 }
-            </td>
-            <td>http://poll-plus.appspot.com/api/urls</td>
-        </tr>
-
     </tbody>
 </table>
 

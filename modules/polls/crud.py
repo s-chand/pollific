@@ -276,13 +276,16 @@ def addComment(user_id, poll_id, comment):
     except KeyError as e:
         return {"error": "There has been and error :%s"%e}
 
+    except AttributeError as e:
+        return {"error": "There has been and error :%s"%e}
+
 def getCommentsForPoll(poll_id):
     try:
-        comments_query = Comment.query(Comment.poll==poll_id).fetch()
+        comments_query = Comment.query(Comment.poll_id==poll_id).fetch()
         comment_list = list()
         if comments_query:
             for com in comments_query:
-                comment_list.append({"comment_id": com.poll, "comment": com.comment, "user_id": com.user_id,
+                comment_list.append({"comment_id": com.poll_id, "comment": com.comment, "user_id": com.user_id,
                                      "date_posted": com.date_added.strftime('%m/%d/%Y')})
 
 
@@ -292,11 +295,11 @@ def getCommentsForPoll(poll_id):
 
 def getUserCommentInPoll(poll_id, user_id):
     try:
-        comment_query = Comment.query(Comment.user_id==user_id, Comment.poll==poll_id).fetch()
+        comment_query = Comment.query(Comment.user_id==user_id, Comment.poll_id==poll_id).fetch()
         comments = list()
         if comment_query:
             for comment in comment_query:
-                comments.append({"comment_id": comment.poll, "comment": comment.comment,
+                comments.append({"comment_id": comment.poll_id, "comment": comment.comment,
                                      "date_posted": comment.date_added.strftime('%m/%d/%Y')})
 
             return {"user_id": user_id, "poll_id": poll_id, "user_comments": comments}

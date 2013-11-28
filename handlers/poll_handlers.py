@@ -100,7 +100,11 @@ class PostCommentsHandler(ApiHandler):
 
 class PollCommentsHandler(ApiHandler):
     def get(self, poll_id):
-        result = crud.getCommentsForPoll(poll_id)
+        user_id = self.request.get('user_id')
+        if user_id:
+            result = crud.getUserCommentInPoll(poll_id=poll_id, user_id=user_id)
+        else:
+            result = crud.getCommentsForPoll(poll_id)
         self.render_object(result, 200)
 
     def post(self):
