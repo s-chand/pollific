@@ -145,6 +145,47 @@
             <td>http://poll-plus.appspot.com/api/polls/user/747674926864657/</td>
         </tr>
         <tr>
+            <td>/api/polls/comment</td>
+            <td>POST</td>
+            <td>POSTs the comments in the poll whose ID is specified </td>
+            <td>the comment details in json format </td>
+            <td>{"user_id": "8597879747", "poll_id": "67376767476", "comment": "Ok, you just posted a comment", "comment_id": "93027786468"}
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments</td>
+        </tr>
+        <tr>
+            <td>/api/polls/poll_id/comments</td>
+            <td>GET</td>
+            <td>GETs the comments of the user_id in the poll whose ID is specified </td>
+            <td>The  poll_id and an optional user_id query string parameter for which comments should be retrieved</td>
+            <td>{
+             "comments": [
+        {
+            "comment": "Wizkid is a biggy",
+            "comment_id": "5629499534213120",
+            "user_id": "185804764220139124118",
+            "date_posted": "11/28/2013"
+        }
+    ],
+    "poll_id": "5629499534213120"
+}
+
+                OR
+                {
+    "user_id": "185804764220139124118",
+    "poll_id": "5629499534213120",
+    "user_comments": [
+        {
+            "comment": "Wizkid is a biggy",
+            "comment_id": "5629499534213120",
+            "date_posted": "11/28/2013"
+        }
+    ]
+} if user id is supplied
+            </td>
+            <td>http://poll-plus.appspot.com/api/polls/747674926864657/comments?user_id=394883668368937782</td>
+        </tr>
+        <tr>
             <td>/api/users/current_user</td>
             <td>GET</td>
             <td>GETs the details of the currently logged in user if there is, else returns a boolean to that effect</td>
@@ -157,18 +198,6 @@
             </td>
             <td>http://poll-plus.appspot.com/api/users/current_user/</td>
         </tr>
-        <tr>
-            <td>/api/urls</td>
-            <td>GET</td>
-            <td>GETs the login url for a given page that requires auth so the user can be properly redirected</td>
-            <td>{"url" : the target URL for which a login url shld be generated}</td>
-            <td>
-                { "login_url": "http://wellyouheardme.com",
-                 }
-            </td>
-            <td>http://poll-plus.appspot.com/api/urls</td>
-        </tr>
-
     </tbody>
 </table>
 

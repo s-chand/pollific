@@ -84,3 +84,36 @@ class PollsUserVotedHandler(ApiHandler):
 
     def post(self):
         self.render_object({},405)
+
+class PostCommentsHandler(ApiHandler):
+    def get(self):
+        self.render_object({}, 405)
+
+    def post(self):
+        data = json.loads(self.request.body)
+        user_id = data["user_id"]
+        poll_id  =data["poll_id"]
+        comment  = data["comment"]
+        result = crud.addComment(user_id, poll_id, comment)
+        self.render_object(result, 201)
+
+
+class PollCommentsHandler(ApiHandler):
+    def get(self, poll_id):
+        user_id = self.request.get('user_id')
+        if user_id:
+            result = crud.getUserCommentInPoll(poll_id=poll_id, user_id=user_id)
+        else:
+            result = crud.getCommentsForPoll(poll_id)
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({}, 405)
+
+class UserCommentsInPollHandler(ApiHandler):
+    def get(self, poll_id, user_id):
+        result = crud.getUserVoteInPoll(user_id, poll_id)
+        self.render_object(result, 200)
+
+    def post(self):
+        self.render_object({}, 405)
