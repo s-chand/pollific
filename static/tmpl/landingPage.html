@@ -8,17 +8,17 @@
                     {{poll.description}}
                 </p>
                 <br/>
-                <p>
-                    <!--a class="btn btn-warning" ng-href="#/poll/{{poll.poll_id}}">Stats</a-->
-                </p></td>
-            </tr>
-        </table>
-    </div>
-    <div class="card">
+                
+                      <div class="card">
         <div class="card-actions">
-            <a class="btn btn-block btn-large btn-success" ng-href="{{loginUrl}}">Vote</a>
+            <a class="btn btn-block btn-large btn-success" ng-href='{{createRedirect(loginUrl,poll.poll_id)}}'>Vote</a>
         </div>
         
     </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+  
 </div>
 <div class="g-person" data-width="370" data-href="//plus.google.com/103244551260750496913" data-layout="landscape" data-rel="author"></div>
