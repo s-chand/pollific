@@ -791,7 +791,7 @@ a.provider({$anchorScroll:vc,$browser:xc,$cacheFactory:yc,$controller:Bc,$docume
  * Created by LRB on 10/28/13.
  */
 
-var pollplusModule = angular.module("PollPlus", ["highcharts-ng"])
+var pollplusModule = angular.module("PollPlus", ["highcharts-ng"]);
 
 var baseURL = "/api";
 
