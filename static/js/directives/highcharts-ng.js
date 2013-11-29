@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 angular.module('highcharts-ng', [])
   .directive('highchart', function () {
 

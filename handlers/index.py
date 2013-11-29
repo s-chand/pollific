@@ -40,15 +40,6 @@ class ApiHandler(BaseHandler):
         self.response.write(json.dumps(result))
 
 
-class URLRedirectHandler(ApiHandler):
-    def get(self):
-        url = self.request.get('url')
-        dest_url = users.create_login_url(url)
-        self.render_object({"login_url": dest_url}, 200)
-
-    def post(self):
-        self.render_object({},405)
-
 class UserHandler(ApiHandler):
     def get(self):
         user = users.get_current_user()
@@ -68,7 +59,6 @@ class UserHandler(ApiHandler):
 
     def post(self):
         pass
-
 
 #it appears this has not a found a use yet..but should soon...
 def getResponseMessage(code):
