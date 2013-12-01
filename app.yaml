@@ -13,6 +13,9 @@ handlers:
 
 - url: /static/js
   static_dir: static/js
+  
+- url: /bower_components
+  static_dir: static/bower_components
 
 - url: /static/css
   static_dir: static/css

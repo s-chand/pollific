@@ -9,6 +9,7 @@ from handlers.file_handlers import UploadHandler, ServeHandler
 
 _routes = [
     Route('/', handler = 'handlers.index.MainHandler', name = 'index_uri'),
+    Route('/test', handler = 'handlers.test.MainHandler', name = 'test_uri'),
     Route('/upload', UploadHandler),
     Route('/serve/<resource>', ServeHandler),
     PathPrefixRoute('/polls', [

@@ -1,0 +1,6 @@
+<div ng-controller="testUploadCtrl" >
+  <img ng-src="{{imgUrl}}">
+  <input type="file" ng-file-select="onFileSelect($files)" accept="image/*">
+  <div ng-file-drop-available="dropSupported=true" ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+  <button ng-click="upload.abort()">Cancel Upload</button>
+</div>
