@@ -16,7 +16,7 @@ var testUploadCtrl = ['$scope', '$upload', '$http', '$log', function($scope, $up
         url: $scope.upload_url,  
         withCredential: true,
         data: {myObj: $scope.myModelObj},
-        file: $file,
+        file: $file
         /* set file formData name for 'Content-Desposition' header. Default: 'file' */
         //fileFormDataName: myFile,
         /* customize how data is added to formData. See #40#issuecomment-28612000 for example */

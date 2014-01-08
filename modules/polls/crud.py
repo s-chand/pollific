@@ -1,4 +1,6 @@
 import logging
+from Lib.threading import _Semaphore
+
 __author__ = 'Tomiwa Ijaware'
 
 __modified_by__ = 'Adekola Adebayo'
@@ -8,9 +10,9 @@ from collections import Counter
 from google.appengine.api import users
 
 
-def makePoll(ownerID, title, desc, type, status, contestants=None):
+def makePoll(ownerID, title, desc, type, status, photoURL, contestants=None):
    try:
-        nPoll = Poll(title=title, description=desc, ownerID=ownerID,type=type, status=status)
+        nPoll = Poll(title=title, description=desc, ownerID=ownerID,type=type, status=status, photoURL=photoURL)
         key = nPoll.put()
         id = str(key.id())
         contestants_results = []
@@ -71,7 +73,8 @@ def getPollDetails(poll_id):
                 "status":poll.status,
                 "type": poll.type,
                 "date_added": poll.date_added.strftime('%m/%d/%Y'),
-                "user_vote": getUserVoteInPoll(user_id, poll_id)
+                "user_vote": getUserVoteInPoll(user_id, poll_id),
+                "photoURL": poll.photoURL
             }
 
         else:

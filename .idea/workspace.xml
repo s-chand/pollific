@@ -2,21 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="172acebe-20d2-489e-85cb-bdbf1045d1c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/polls/crud.py" afterPath="$PROJECT_DIR$/modules/polls/crud.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/test/fileUploadCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/test/fileUploadCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/file_handlers.py" afterPath="$PROJECT_DIR$/handlers/file_handlers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/poll.py" afterPath="$PROJECT_DIR$/models/poll.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/poll_handlers.py" afterPath="$PROJECT_DIR$/handlers/poll_handlers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pollific.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1386931838863" ignored="false" />
+    <file path="/Dummy.txt" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1389210044843" ignored="false" />
     <file path="/vote_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384989526428" ignored="false" />
     <file path="/base.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383578726390" ignored="false" />
     <file path="/index.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383978717329" ignored="false" />
     <file path="/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980696907" ignored="false" />
     <file path="/index.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385272641057" ignored="false" />
-    <file path="/poll_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385644233765" ignored="false" />
+    <file path="/poll_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1389210646897" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/statics/js/app.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980697979" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/logic/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383980857308" ignored="false" />
-    <file path="/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385643770999" ignored="false" />
-    <file path="/poll.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385643694083" ignored="false" />
+    <file path="/crud.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1389223001392" ignored="false" />
+    <file path="/poll.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1389093248354" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/main.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384387829358" ignored="false" />
     <file path="/main.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1384027793807" ignored="false" />
     <file path="$USER_HOME$/PycharmProjects/9lyrix/app.yaml" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1383813852018" ignored="false" />
@@ -30,6 +36,8 @@
     <file path="/routes.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385628696981" ignored="false" />
     <file path="/api.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385645406434" ignored="false" />
     <file path="/landing.html" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1385320862686" ignored="false" />
+    <file path="/file_handlers.py" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1389223093946" ignored="false" />
+    <file path="/fileUploadCtrl.js" changelist="172acebe-20d2-489e-85cb-bdbf1045d1c2" time="1389216697135" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +57,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="poll_handlers.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="12" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
+            <state line="8" column="64" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="error_handlers.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/handlers/error_handlers.py">
+      <file leaf-file-name="fileUploadCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/controllers/test/fileUploadCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="31" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular-file-upload.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/bower_components/ng-file-upload/angular-file-upload.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -67,46 +84,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.py">
+      <file leaf-file-name="FileAPI.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/bower_components/ng-file-upload/FileAPI.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="4" selection-start="3109" selection-end="3109" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="poll.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/poll.py">
+      <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/tmpl/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="11" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vote_handlers.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/handlers/vote_handlers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="27" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crud.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="275" column="19" selection-start="9992" selection-end="9992" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/api.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="45" selection-start="8409" selection-end="8409" vertical-scroll-proportion="0.22077923">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -115,26 +105,62 @@
       <file leaf-file-name="index.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
+            <state line="15" column="18" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landing.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/landing.html">
+      <file leaf-file-name="poll_handlers.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="43" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0">
+            <state line="23" column="42" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crud.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="193" column="40" selection-start="7241" selection-end="7241" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#1224#1621#0" expanded="false" />
+                <element signature="e#3157#3740#0" expanded="false" />
+                <element signature="e#3823#5613#0" expanded="false" />
+                <element signature="e#5719#6197#0" expanded="false" />
+                <element signature="e#6358#7155#0" expanded="false" />
+                <element signature="e#7900#8194#0" expanded="false" />
+                <element signature="e#8230#8728#0" expanded="false" />
+                <element signature="e#8767#9495#0" expanded="false" />
+                <element signature="e#9542#9810#0" expanded="false" />
+                <element signature="e#9859#10259#0" expanded="false" />
+                <element signature="e#10298#10815#0" expanded="false" />
+                <element signature="e#10865#11417#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="poll.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/poll.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PollDetailViewCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/controllers/PollDetailViewCtrl.js">
+      <file leaf-file-name="file_handlers.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/handlers/file_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="0" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="37" column="43" selection-start="1383" selection-end="1383" vertical-scroll-proportion="1.4971591">
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,18 +192,20 @@
         <option value="$PROJECT_DIR$/templates/landing.html" />
         <option value="$PROJECT_DIR$/static/js/controllers/PollDetailViewCtrl.js" />
         <option value="$PROJECT_DIR$/handlers/index.py" />
-        <option value="$PROJECT_DIR$/models/poll.py" />
-        <option value="$PROJECT_DIR$/modules/polls/crud.py" />
         <option value="$PROJECT_DIR$/routes.py" />
-        <option value="$PROJECT_DIR$/handlers/poll_handlers.py" />
         <option value="$PROJECT_DIR$/templates/api.html" />
+        <option value="$PROJECT_DIR$/models/poll.py" />
+        <option value="$PROJECT_DIR$/handlers/poll_handlers.py" />
+        <option value="$PROJECT_DIR$/static/js/controllers/test/fileUploadCtrl.js" />
+        <option value="$PROJECT_DIR$/modules/polls/crud.py" />
+        <option value="$PROJECT_DIR$/handlers/file_handlers.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -214,6 +242,10 @@
               <option name="myItemId" value="pollific" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -236,6 +268,154 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pollific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,11 +452,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="com.jetbrains.python.buildout.BuildoutModulesConfigurable" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../textsearch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GAE-textSearch" />
     <property name="FullScreen" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -288,6 +472,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adekola\Documents\pollific\pollific" />
       <recent name="C:\Users\adekola\Documents\pollific\pollific\static\js" />
       <recent name="C:\Users\adekola\Documents\pollific\pollific\static\css" />
     </key>
@@ -424,17 +609,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47727272" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20364742" sideWeight="0.67972744" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32027256" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -509,9 +694,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.yaml">
+    <entry file="file://$PROJECT_DIR$/templates/api.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" />
+        <state line="179" column="32" selection-start="8773" selection-end="8773" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.yaml">
@@ -519,93 +704,117 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/PollDetailViewCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="82" column="0" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/queue.yaml">
+    <entry file="file://$PROJECT_DIR$/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="16" column="7" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/handlers/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="12" column="36" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/file_handlers.py">
+    <entry file="file://$PROJECT_DIR$/templates/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="14" column="24" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/error_handlers.py">
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="64" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bower_components/ng-file-upload/angular-file-upload.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing.html">
+    <entry file="file://$PROJECT_DIR$/static/bower_components/ng-file-upload/FileAPI.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="43" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/vote_handlers.py">
+    <entry file="file://$PROJECT_DIR$/static/tmpl/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="27" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/poll.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="11" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="19" selection-start="9992" selection-end="9992" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="4" selection-start="3109" selection-end="3109" vertical-scroll-proportion="0.0">
+        <state line="15" column="18" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/poll_handlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="12" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
+        <state line="23" column="42" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/test/fileUploadCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="31" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/PollDetailViewCtrl.js">
+    <entry file="file://$PROJECT_DIR$/models/poll.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0">
+        <state line="2" column="6" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/api.html">
+    <entry file="file://$PROJECT_DIR$/modules/polls/crud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="45" selection-start="8409" selection-end="8409" vertical-scroll-proportion="0.22077923">
-          <folding />
+        <state line="193" column="40" selection-start="7241" selection-end="7241" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#1224#1621#0" expanded="false" />
+            <element signature="e#3157#3740#0" expanded="false" />
+            <element signature="e#3823#5613#0" expanded="false" />
+            <element signature="e#5719#6197#0" expanded="false" />
+            <element signature="e#6358#7155#0" expanded="false" />
+            <element signature="e#7900#8194#0" expanded="false" />
+            <element signature="e#8230#8728#0" expanded="false" />
+            <element signature="e#8767#9495#0" expanded="false" />
+            <element signature="e#9542#9810#0" expanded="false" />
+            <element signature="e#9859#10259#0" expanded="false" />
+            <element signature="e#10298#10815#0" expanded="false" />
+            <element signature="e#10865#11417#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/file_handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="43" selection-start="1383" selection-end="1383" vertical-scroll-proportion="1.4971591">
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

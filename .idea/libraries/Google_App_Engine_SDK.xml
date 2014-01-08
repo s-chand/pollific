@@ -19,6 +19,7 @@
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/markupsafe-0.15" />
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/mox" />
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/oauth2" />
+      <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/PIL-1.1.7-py2.7-win32.egg" />
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/prettytable" />
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/protorpc-1.0" />
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/PyAMF-0.6.1" />

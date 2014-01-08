@@ -1,3 +1,4 @@
+from email.header import _Accumulator
 from google.appengine.ext import blobstore
 from google.appengine.api import images
 from google.appengine.ext.webapp import blobstore_handlers
@@ -12,7 +13,11 @@ class UploadHandler(blobstore_handlers.BlobstoreUploadHandler):
     def post(self):
         upload_files = self.get_uploads('file')  # 'file' is file upload field in the form
         blob_info = upload_files[0]
-        self.response.write('/serve/%s' % blob_info.key())
+        #self.response.write('/serve/%s' % blob_info.key())
+        #use imaging service to return the image_url
+        img_url = get_image_url(blob_info.key())
+        self.response.write(img_url)
+
     
 
 class ServeHandler(webapp2.RequestHandler):
@@ -26,3 +31,8 @@ class ServeHandler(webapp2.RequestHandler):
         thumbnail = img.execute_transforms(output_encoding=images.JPEG)
         self.response.headers['Content-Type'] = 'image/jpeg'
         self.response.out.write(thumbnail)
+
+
+def get_image_url(blob_key):
+    #shall return the URl for serving the image
+    return images.get_serving_url(blob_key)

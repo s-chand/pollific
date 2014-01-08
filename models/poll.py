@@ -7,6 +7,8 @@ class Poll(ndb.Model):
     type = ndb.StringProperty() # Private or public, rite?
     status = ndb.StringProperty()  #....Published or not
     date_added = ndb.DateProperty(auto_now_add=True)
+    photoURL = ndb.StringProperty()
+
 
     def _to_dict(self, include=None, exclude=None):
         crap = self.to_dict()

@@ -29,7 +29,7 @@ class PollsHandler(ApiHandler):
                 result = crud.makePoll(user, title, desc, type, status)
 
         else:
-            result = {"error": "You are not logged in to PollPlus.you hav to log in to create a poll"}
+            result = {"error": "You are not logged in to PollPlus. You have to log in to create a poll"}
 
 
 
